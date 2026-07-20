@@ -116,39 +116,55 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .supertop { padding: 8px 0 0; }
 .supertop-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
-.supertop-card { cursor: pointer; }
-.supertop-card:hover .supertop-headline { color: var(--ui-primary, #00A876); }
+.supertop-card { cursor: pointer; position: relative; }
+.supertop-card-main .supertop-img { aspect-ratio: 1/1; }
+.supertop-card-small .supertop-img { aspect-ratio: auto; height: 196px; }
 
 .supertop-img {
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 12px;
+  overflow: hidden; position: relative;
 }
-.supertop-tag {
-  position: absolute; top: 12px; left: 12px;
-  background: var(--ui-dark-new, #161616);
-  color: #fff;
-  padding: 4px 12px;
-  font-size: 12px; font-weight: 500;
-  text-transform: uppercase;
+.supertop-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%);
+  z-index: 1;
+}
+.supertop-img-content {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 16px;
 }
 .supertop-headline {
-  font-size: 18px; font-weight: 600;
-  color: var(--ui-content, #222);
-  line-height: 1.3;
-  margin-bottom: 8px;
-  transition: color 0.2s;
+  font-family: 'TT Sports Display', sans-serif;
+  font-weight: 600; color: #fff;
+  line-height: 1.2; margin-bottom: 8px;
 }
-.supertop-meta {
-  display: flex; gap: 16px;
-  font-size: 13px; font-weight: 500;
-  color: var(--ui-tertiary, #9B9B9B);
+.supertop-card-main .supertop-headline { font-size: 28px; }
+.supertop-card-small .supertop-headline { font-size: 20px; }
+.supertop-bottom {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 8px;
 }
-.supertop-comments { padding-left: 16px; border-left: 1px solid var(--ui-block-border, #EAEAEA); }
+.supertop-subtitle {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9);
+  flex: 1;
+}
+.supertop-stats { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.supertop-plus {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ui-primary, #00A876);
+}
+.supertop-comments {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ui-fill-light, #F4F4F4);
+}
+
+/* Right column */
+.supertop-right { display: flex; flex-direction: column; gap: 8px; }
 .teaser-all-btn {
   display: flex; align-items: center; gap: 4px;
   background: none; border: none;
@@ -270,7 +286,9 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   .header-right .header-btn:nth-child(4),
   .header-right .header-btn:nth-child(5) { display: none; }
   .teaser-inner { padding: 0 12px; }
-  .supertop-cards { grid-template-columns: 1fr; gap: 16px; }
+  .supertop-cards { grid-template-columns: 1fr; }
+  .supertop-right { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .supertop-card-main .supertop-img { aspect-ratio: 16/10; }
   .teaser-top { margin-bottom: 12px; }
   .teaser-sport { margin-bottom: 12px; }
   .teaser-sport-header { padding: 0 12px; font-size: 14px; }
