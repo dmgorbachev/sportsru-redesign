@@ -173,6 +173,8 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .feed-left, .feed-main, .feed-right {
   min-height: 200px;
+  background: var(--ui-disabled, #D8D8D8);
+  border-radius: 16px;
 }
 .teaser-all-btn {
   display: flex; align-items: center; gap: 4px;
