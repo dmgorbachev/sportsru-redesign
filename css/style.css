@@ -171,10 +171,44 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   grid-template-columns: 20% 60% 20%;
   gap: 16px;
 }
-.feed-left, .feed-main, .feed-right {
-  min-height: 200px;
-  background: var(--ui-disabled, #D8D8D8);
-  border-radius: 16px;
+.feed-left {
+  padding: 0; background: none; min-height: 0;
+}
+.feed-left-header {
+  padding: 16px; border-bottom: 1px solid var(--ui-block-border, #EAEAEA);
+}
+.feed-left-header h3 {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 14px; font-weight: 600;
+  color: var(--ui-content, #222);
+  text-transform: uppercase;
+}
+.feed-left-list {
+  list-style: none; padding: 8px 16px;
+}
+.feed-left-list li {
+  padding: 8px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
+  font-size: 13px; line-height: 1.4;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px;
+}
+.feed-left-list li:last-child { border-bottom: none; }
+.feed-tag {
+  color: var(--ui-primary, #00A876);
+  font-weight: 500; font-size: 11px;
+  text-transform: uppercase;
+}
+.feed-left-list time {
+  color: var(--ui-tertiary, #9B9B9B); font-size: 11px;
+}
+.feed-left-list a {
+  color: var(--ui-content, #222);
+  text-decoration: none;
+  flex: 1; min-width: 100%;
+}
+.feed-left-list a:hover { color: var(--ui-primary, #00A876); }
+.feed-fire {
+  color: var(--ui-danger, #FF4848);
+  font-size: 11px; font-weight: 600;
 }
 .teaser-all-btn {
   display: flex; align-items: center; gap: 4px;
