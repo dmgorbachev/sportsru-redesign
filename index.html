@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sports.ru</title>
-  <link rel="stylesheet" href="css/tokens.css">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="header-inner">
-      <!-- Left: logo + nav -->
       <div class="header-left">
         <a href="/" class="header-logo">
           <img src="images/Type=Cyrilic Full.svg" alt="Sports.ru" width="102" height="26">
         </a>
-        <nav class="header-nav" id="headerNav">
-          <button class="header-nav-toggle" id="headerNavToggle" aria-label="Меню">
+        <nav class="header-nav">
+          <button class="header-nav-toggle" aria-label="Меню">
             <img src="images/icons/menu 3.svg" alt="" width="24" height="24">
           </button>
           <ul class="header-nav-list">
@@ -37,19 +37,17 @@
           </ul>
         </nav>
       </div>
-
-      <!-- Right: actions -->
       <div class="header-right">
         <button class="header-btn" aria-label="Прямой эфир">
           <img src="images/icons/video 2.svg" alt="" width="24" height="24">
         </button>
-        <button class="header-btn header-btn-search" aria-label="Поиск">
+        <button class="header-btn" aria-label="Поиск">
           <img src="images/icons/search.svg" alt="" width="24" height="24">
         </button>
-        <button class="header-btn header-btn-notify" aria-label="Уведомления">
+        <button class="header-btn" aria-label="Уведомления">
           <img src="images/icons/notification.svg" alt="" width="24" height="24">
         </button>
-        <button class="header-btn header-btn-write" aria-label="Написать">
+        <button class="header-btn" aria-label="Написать">
           <img src="images/icons/edit.svg" alt="" width="24" height="24">
         </button>
         <button class="header-avatar" aria-label="Профиль">
@@ -58,6 +56,173 @@
       </div>
     </div>
   </header>
+
+  <!-- TEASER ZONE -->
+  <main class="teaser">
+    <div class="teaser-inner">
+
+      <!-- Header: МАТЧИ СЕГОДНЯ -->
+      <div class="teaser-top">
+        <h2 class="teaser-title">МАТЧИ СЕГОДНЯ</h2>
+        <button class="teaser-all-btn">Все матчи <img src="images/icons/arrow right.svg" alt="" width="16" height="16"></button>
+      </div>
+
+      <!-- FOOTBALL -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="football">
+          <div class="teaser-sport-name">
+            <img src="images/icons/football.svg" alt="" width="24" height="24">
+            <span>Футбол. Чемпионат Мира 2026</span>
+          </div>
+          <img src="images/icons/arrow up.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Англия. Премьер-лига</span>
+              <span class="match-time">22:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Арсенал</span></div>
+              <div class="match-score">2 : 1</div>
+              <div class="match-team"><span>Ливерпуль</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>1.85</span><span>3.40</span><span>4.20</span>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Италия. Серия А</span>
+              <span class="match-time">22:45</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Интер</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span>Милан</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>2.10</span><span>3.10</span><span>3.80</span>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Испания. Примера</span>
+              <span class="match-time">23:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Барселона</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span>Реал Мадрид</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>2.50</span><span>3.20</span><span>2.90</span>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Россия. Премьер-лига</span>
+              <span class="match-time">19:30</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Зенит</span></div>
+              <div class="match-score">3 : 0</div>
+              <div class="match-team"><span>Спартак</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>1.65</span><span>3.80</span><span>5.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOCKEY -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="hockey">
+          <div class="teaser-sport-name">
+            <img src="images/icons/hockey.svg" alt="" width="24" height="24">
+            <span>Хоккей. Кубок Стенли 2025/2026. Финал</span>
+          </div>
+          <img src="images/icons/arrow down.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Кубок Стенли</span>
+              <span class="match-time">02:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Флорида</span></div>
+              <div class="match-score">4 : 2</div>
+              <div class="match-team"><span>Эдмонтон</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>2.20</span><span>3.50</span><span>3.10</span>
+            </div>
+          </div>
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">КХЛ</span>
+              <span class="match-time">19:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>ЦСКА</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span>СКА</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>2.40</span><span>3.30</span><span>2.90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TENNIS -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="tennis">
+          <div class="teaser-sport-name">
+            <img src="images/icons/tennis.svg" alt="" width="24" height="24">
+            <span>Теннис. Ролан Гаррос 2026</span>
+          </div>
+          <img src="images/icons/arrow up.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Мужчины. Одиночный</span>
+              <span class="match-time">15:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Алькарас</span></div>
+              <div class="match-score">3 : 1</div>
+              <div class="match-team"><span>Синнер</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>1.80</span><span>—</span><span>2.10</span>
+            </div>
+          </div>
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Женщины. Одиночный</span>
+              <span class="match-time">12:30</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Швёнтек</span></div>
+              <div class="match-score">2 : 0</div>
+              <div class="match-team"><span>Соболенко</span></div>
+            </div>
+            <div class="match-coeffs">
+              <span>1.55</span><span>—</span><span>2.65</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
 
 </body>
 </html>
