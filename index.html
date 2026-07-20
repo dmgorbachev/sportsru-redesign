@@ -224,5 +224,17 @@
     </div>
   </main>
 
+  <script>
+    // Collapse/expand sport sections
+    document.querySelectorAll('.teaser-sport-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const cards = header.nextElementSibling;
+        const arrow = header.querySelector('img:last-child');
+        const isOpen = cards.style.display !== 'none';
+        cards.style.display = isOpen ? 'none' : '';
+        arrow.classList.toggle('open', !isOpen);
+      });
+    });
+  </script>
 </body>
 </html>

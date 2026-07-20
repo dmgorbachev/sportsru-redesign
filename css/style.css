@@ -139,7 +139,8 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   color: var(--ui-content, #222);
 }
 .teaser-sport-name img { width: 24px; height: 24px; }
-.teaser-sport-header > img { width: 24px; height: 24px; }
+.teaser-sport-header > img { width: 24px; height: 24px; filter: brightness(0) invert(1); cursor: pointer; transition: transform 0.2s; }
+.teaser-sport-header > img.open { transform: rotate(180deg); }
 
 /* Match cards row */
 .teaser-cards {
