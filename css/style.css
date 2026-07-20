@@ -120,8 +120,8 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   gap: 8px;
 }
 .supertop-card { cursor: pointer; position: relative; }
-.supertop-card-main .supertop-img { aspect-ratio: 1/1; }
-.supertop-card-small .supertop-img { aspect-ratio: auto; height: 196px; }
+.supertop-card-main .supertop-img { height: 400px; }
+.supertop-card-small .supertop-img { height: calc((400px - 8px) / 2); }
 
 .supertop-img {
   overflow: hidden; position: relative;
