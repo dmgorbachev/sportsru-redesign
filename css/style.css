@@ -125,6 +125,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 
 .supertop-img {
   overflow: hidden; position: relative;
+  border-radius: 16px;
 }
 .supertop-img-overlay {
   position: absolute; inset: 0;
