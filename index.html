@@ -148,7 +148,7 @@
           </div>
           <img src="images/icons/arrow down.svg" alt="" width="24" height="24">
         </div>
-        <div class="teaser-cards">
+        <div class="teaser-cards" style="display:none">
           <div class="match-card">
             <div class="match-header">
               <span class="match-league">Кубок Стенли</span>
@@ -187,9 +187,9 @@
             <img src="images/icons/tennis.svg" alt="" width="24" height="24">
             <span>Теннис. Ролан Гаррос 2026</span>
           </div>
-          <img src="images/icons/arrow up.svg" alt="" width="24" height="24">
+          <img src="images/icons/arrow down.svg" alt="" width="24" height="24">
         </div>
-        <div class="teaser-cards">
+        <div class="teaser-cards" style="display:none">
           <div class="match-card">
             <div class="match-header">
               <span class="match-league">Мужчины. Одиночный</span>
@@ -227,9 +227,14 @@
   <script>
     // Collapse/expand sport sections
     document.querySelectorAll('.teaser-sport-header').forEach(header => {
+      const cards = header.nextElementSibling;
+      const arrow = header.querySelector('img:last-child');
+      const isCollapsed = cards.style.display === 'none';
+      if (isCollapsed) {
+        cards.style.display = 'none';
+        arrow.classList.remove('open');
+      }
       header.addEventListener('click', () => {
-        const cards = header.nextElementSibling;
-        const arrow = header.querySelector('img:last-child');
         const isOpen = cards.style.display !== 'none';
         cards.style.display = isOpen ? 'none' : '';
         arrow.classList.toggle('open', !isOpen);
