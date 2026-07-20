@@ -1,0 +1,150 @@
+/* ===== Sports.ru Redesign — Header ===== */
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg); }
+
+/* ===== Fonts ===== */
+@font-face {
+  font-family: 'TT Neoris';
+  src: url('../fonts/TT Neoris Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'TT Neoris';
+  src: url('../fonts/TT Neoris Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'TT Neoris';
+  src: url('../fonts/TT Neoris DemiBold.woff2') format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'TT Sports Display';
+  src: url('../fonts/TTSportsDisplay-DemiBold.woff2') format('woff2');
+  font-weight: 600;
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--ui-dark-new, #161616);
+  height: 56px;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  max-width: 1480px; margin: 0 auto;
+  height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+}
+
+/* Logo */
+.header-logo { display: flex; align-items: center; flex-shrink: 0; }
+.header-logo img { width: 102px; height: 26px; }
+
+/* Left side */
+.header-left { display: flex; align-items: center; gap: 20px; height: 100%; }
+
+/* Navigation */
+.header-nav { display: flex; align-items: center; height: 100%; }
+.header-nav-toggle { display: none; }
+.header-nav-list {
+  display: flex; align-items: center; gap: 0; list-style: none; height: 100%;
+}
+.header-nav-list li { height: 100%; display: flex; align-items: center; }
+.header-nav-list a {
+  color: var(--ui-headers, #fff);
+  text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  padding: 0 8px; height: 44px;
+  display: flex; align-items: center;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.header-nav-list a:hover { opacity: 0.7; }
+.header-nav-list a.active { opacity: 1; }
+
+/* Nav dividers */
+.header-nav-list li + li::before {
+  content: ''; display: block;
+  width: 1px; height: 24px;
+  background: var(--ui-tertiary-light, #505050);
+  margin-right: 0;
+}
+
+/* Right side */
+.header-right { display: flex; align-items: center; gap: 0; height: 100%; }
+.header-btn {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  flex-shrink: 0;
+}
+.header-btn img { width: 24px; height: 24px; opacity: 0.9; }
+.header-btn:hover img { opacity: 1; }
+
+/* Avatar */
+.header-avatar {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  flex-shrink: 0;
+}
+.header-avatar-circle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--ui-tertiary-light, #505050);
+}
+
+/* ===== Responsive ===== */
+
+/* 1280+ — full nav */
+@media (min-width: 1280px) {
+  .header-inner { padding: 0 24px; }
+  .header-nav-toggle { display: none; }
+  .header-nav-list { display: flex; }
+}
+
+/* 960–1279 — full nav, less padding */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .header-nav-list { display: flex; }
+  .header-nav-list li:nth-child(9),
+  .header-nav-list li:nth-child(10),
+  .header-nav-list li:nth-child(11) { display: none; }
+}
+
+/* 640–959 — icons only, some hidden */
+@media (min-width: 640px) and (max-width: 959px) {
+  .header-nav-list { display: none; }
+  .header-nav-toggle { display: flex; }
+  .header-right .header-btn:nth-child(4) { display: none; }
+}
+
+/* 360–639 — compact */
+@media (min-width: 360px) and (max-width: 639px) {
+  .header-nav-list { display: none; }
+  .header-nav-toggle { display: flex; }
+  .header-right .header-btn:nth-child(3),
+  .header-right .header-btn:nth-child(4),
+  .header-right .header-btn:nth-child(5) { display: none; }
+}
+
+/* 0–359 — minimal */
+@media (max-width: 359px) {
+  .header-inner { padding: 0 8px; }
+  .header-logo img { width: 80px; height: 20px; }
+  .header-nav-list { display: none; }
+  .header-nav-toggle { display: flex; }
+  .header-right .header-btn:nth-child(3),
+  .header-right .header-btn:nth-child(4),
+  .header-right .header-btn:nth-child(5) { display: none; }
+}
+
+/* Nav toggle button styling */
+.header-nav-toggle {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+}
+.header-nav-toggle img { width: 24px; height: 24px; }
