@@ -248,6 +248,37 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .feed-poll-bar.active span { background: var(--ui-primary, #00A876); }
 .feed-poll-votes { font-size: 11px; color: var(--ui-tertiary, #9B9B9B); margin-top: 8px; display: block; }
+
+/* Feed center cards */
+.feed-main { display: flex; flex-direction: column; gap: 0; }
+.feed-card {
+  padding: 16px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
+}
+.feed-card-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--ui-content, #222);
+  line-height: 1.2; margin-bottom: 6px;
+  cursor: pointer;
+}
+.feed-card-title:hover { color: var(--ui-primary, #00A876); }
+.feed-card-desc {
+  font-size: 14px; color: var(--ui-tertiary, #9B9B9B);
+  margin-bottom: 6px;
+}
+.feed-card-time {
+  font-size: 12px; color: var(--ui-secondary, #7F7F7F);
+}
+.feed-card-tribune {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.feed-card-tribune .feed-card-title { margin-bottom: 0; }
+.feed-tribune-btn {
+  background: var(--ui-primary, #00A876);
+  color: #fff; border: none;
+  padding: 8px 20px; font-size: 14px; font-weight: 500;
+  cursor: pointer;
+}
 .teaser-all-btn {
   display: flex; align-items: center; gap: 4px;
   background: none; border: none;
