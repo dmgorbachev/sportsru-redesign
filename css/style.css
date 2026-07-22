@@ -97,7 +97,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .header-nav-toggle img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
 
 /* ===== Teaser Zone ===== */
-.teaser { padding: 12px 0 0; }
+.teaser { padding: 12px 0 0; margin-bottom:48px; }
 .teaser-inner { max-width: 1480px; margin: 0 auto; padding: 0 16px; }
 
 /* Tears top row */
@@ -113,7 +113,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 
 /* ===== Supertop ===== */
-.supertop { padding: 8px 0 0; }
+.supertop { padding: 8px 0 0; margin-bottom:48px;  }
 .supertop-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
