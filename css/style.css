@@ -404,12 +404,14 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 
 /* Match teams row */
 .match-teams {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 4px;
 }
 .match-team {
   display: flex; align-items: center; gap: 4px;
   font-size: 14px; font-weight: 400; color: var(--ui-content, #222);
+  flex: 1;
 }
+.match-team:first-child { justify-content: flex-end; }
 .match-team img, .match-team-logo {
   width: 24px; height: 24px; border-radius: 32px;
   display: flex; align-items: center; justify-content: center;
@@ -418,9 +420,9 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .match-score {
   padding: 2px 8px; background: var(--ui-fill, #F4F4F4);
-  font-size: 14px; font-weight: 500;
-  color: var(--ui-content, #222);
-  white-space: nowrap;
+  font-size: 14px; font-weight: 500; font-family: 'TT Neoris', sans-serif;
+  color: var(--ui-content, #222); white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Coefficients row */
