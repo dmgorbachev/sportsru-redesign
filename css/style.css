@@ -381,6 +381,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .match-card {
   background: var(--ui-bg, #fff);
   border: 1px solid var(--ui-block-border, #EAEAEA);
+  border-radius: 16px;
   padding: 8px 12px;
   display: flex; flex-direction: column; gap: 12px;
   cursor: pointer;
