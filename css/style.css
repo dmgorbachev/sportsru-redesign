@@ -117,7 +117,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .supertop-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 16px;
 }
 .supertop-card { cursor: pointer; position: relative; }
 .supertop-card-main .supertop-img { height: 468px; }
