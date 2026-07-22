@@ -276,6 +276,68 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   padding: 8px 20px; font-size: 14px; font-weight: 500;
   cursor: pointer;
 }
+
+/* ===== Plot of the Day ===== */
+.plot { padding: 24px 0; }
+.plot-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.plot-main-img {
+  aspect-ratio: 16/10; border-radius: 16px; overflow: hidden;
+  margin-bottom: 12px;
+}
+.plot-main-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 24px; font-weight: 600;
+  color: var(--ui-content, #222);
+  line-height: 1.2; margin-bottom: 8px;
+}
+.plot-main-desc {
+  font-size: 14px; color: var(--ui-tertiary, #9B9B9B);
+  margin-bottom: 8px; line-height: 1.4;
+}
+.plot-stats { display: flex; gap: 16px; }
+
+.plot-side { display: flex; flex-direction: column; gap: 12px; }
+.plot-side-card {
+  display: flex; gap: 12px; cursor: pointer;
+}
+.plot-side-img {
+  width: 100px; height: 70px; flex-shrink: 0;
+  border-radius: 12px; overflow: hidden;
+}
+.plot-side-title {
+  font-size: 14px; font-weight: 500;
+  color: var(--ui-content, #222);
+  line-height: 1.3; flex: 1;
+}
+.plot-side-card:hover .plot-side-title { color: var(--ui-primary, #00A876); }
+
+/* ===== Tribune ===== */
+.tribune { padding: 24px 0; }
+.tribune-cards {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.tribune-card {
+  cursor: pointer; position: relative;
+}
+.tribune-card-img {
+  aspect-ratio: 16/10; border-radius: 16px; overflow: hidden;
+  margin-bottom: 12px;
+}
+.tribune-card-avatar {
+  position: absolute; top: 8px; left: 8px;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 16px; font-weight: 600;
+}
+.tribune-card-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--ui-content, #222);
+  line-height: 1.2; margin-bottom: 6px;
+}
+.tribune-card-author {
+  font-size: 13px; color: var(--ui-secondary, #7F7F7F);
+}
 .teaser-all-btn {
   display: flex; align-items: center; gap: 4px;
   background: none; border: none;
