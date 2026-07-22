@@ -133,7 +133,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .supertop-headline {
   font-family: 'TT Sports Display', sans-serif;
   font-weight: 600; color: var(--ui-content, #222);
-  line-height: 1.2; margin-bottom: 8px;
+  line-height: 1.2; margin-bottom: 0px;
 }
 .supertop-bottom {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 8px;
