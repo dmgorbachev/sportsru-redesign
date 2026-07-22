@@ -120,7 +120,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   gap: 8px;
 }
 .supertop-card { cursor: pointer; position: relative; }
-.supertop-card-main .supertop-img { height: 400px; }
+.supertop-card-main .supertop-img { height: 468px; }
 .supertop-card-small .supertop-img { height: calc((400px - 8px) / 2); }
 
 .supertop-img {
@@ -129,6 +129,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .supertop-text {
   padding: 12px 4px 0;
+  margin-bottom: 16px;
 }
 .supertop-headline {
   font-family: 'TT Sports Display', sans-serif;
