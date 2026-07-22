@@ -512,6 +512,22 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
     flex-shrink: 0;
     scroll-snap-align: start;
   }
+
+  /* Feed — stack columns on mobile */
+  .feed-layout { grid-template-columns: 1fr; gap: 12px; }
+  .feed-main { order: -1; }
+  .feed-card { flex-direction: column; }
+  .feed-card-img { width: 100%; height: auto; aspect-ratio: 16/10; }
+  .feed-right-block { background: none; padding: 12px 0; }
+
+  /* Plot — stack on mobile */
+  .plot-layout { grid-template-columns: 1fr; }
+  .plot-side { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .plot-side-card { flex-direction: column; }
+  .plot-side-img { width: 100%; height: auto; aspect-ratio: 16/10; }
+
+  /* Tribune — 2 columns on mobile */
+  .tribune-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
 /* 0–359 — small */
@@ -529,4 +545,12 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
     scroll-snap-type: x mandatory;
   }
   .match-card { min-width: 220px; max-width: 240px; flex-shrink: 0; }
+  .supertop-cards { grid-template-columns: 1fr; }
+  .supertop-right { grid-template-columns: 1fr; }
+  .feed-layout { grid-template-columns: 1fr; }
+  .feed-card { flex-direction: column; }
+  .feed-card-img { width: 100%; aspect-ratio: 16/10; }
+  .plot-layout { grid-template-columns: 1fr; }
+  .plot-side { grid-template-columns: 1fr; }
+  .tribune-cards { grid-template-columns: 1fr; }
 }
