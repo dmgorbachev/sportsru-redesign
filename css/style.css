@@ -400,13 +400,19 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   font-weight: 600; color: var(--ui-content, #222);
 }
 
-/* Teams row */
+/* Match teams row */
 .match-teams {
   display: flex; align-items: center; justify-content: space-between;
   gap: 8px;
 }
-.match-team { flex: 1; font-size: 14px; font-weight: 500; color: var(--ui-content, #222); }
-.match-team:last-child { text-align: right; }
+.match-team { display: flex; align-items: center; gap: 8px; flex: 1; font-size: 14px; font-weight: 500; color: var(--ui-content, #222); }
+.match-team:last-child { text-align: right; justify-content: flex-end; }
+.match-team-logo {
+  width: 24px; height: 24px; border-radius: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; color: #fff;
+  flex-shrink: 0;
+}
 .match-score {
   font-size: 16px; font-weight: 600;
   color: var(--ui-content, #222);
