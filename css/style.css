@@ -359,6 +359,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   height: 40px; padding: 0 16px;
   margin-bottom: 12px;
   cursor: pointer;
+  border-radius: 12px;
 }
 .teaser-sport-name {
   display: flex; align-items: center; gap: 8px;
@@ -380,6 +381,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .match-card {
   background: var(--ui-bg, #fff);
   border: 1px solid var(--ui-block-border, #EAEAEA);
+  border-radius: 16px;
   padding: 12px;
   display: flex; flex-direction: column; gap: 8px;
   cursor: pointer;
