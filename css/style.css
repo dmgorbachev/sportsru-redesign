@@ -127,7 +127,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .supertop-card-small .supertop-img {
   height: auto; aspect-ratio: 16/10;
-  width: 180px; flex-shrink: 0;
+  width: 50%; flex-shrink: 0;
 }
 .supertop-card-small .supertop-text {
   padding: 0; flex: 1; min-width: 0;
