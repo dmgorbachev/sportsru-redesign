@@ -113,6 +113,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 
 /* ===== Supertop ===== */
+.supertop-right { display: flex; flex-direction: column; gap: 8px; }
 .supertop { padding: 8px 0 0; margin-bottom:48px;  }
 .supertop-cards {
   display: grid;
