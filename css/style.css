@@ -328,7 +328,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   display: flex; gap: 12px; cursor: pointer;
 }
 .plot-side-img {
-  width: 100px; height: 70px; flex-shrink: 0;
+  width: 120px; height: 74px; flex-shrink: 0;
   border-radius: 12px; overflow: hidden;
 }
 .plot-side-title {
