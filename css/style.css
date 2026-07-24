@@ -123,7 +123,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .supertop-card { cursor: pointer; position: relative; }
 .supertop-card-main .supertop-img { height: 400px; }
 .supertop-card-small {
-  display: flex; gap: 12px;
+  display: flex; gap: 16px;
   height: 192px;
 }
 .supertop-card-small .supertop-img {
