@@ -123,9 +123,10 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .supertop-card-main .supertop-img { height: 468px; }
 .supertop-card-small {
   display: flex; gap: 12px;
+  height: 230px;
 }
 .supertop-card-small .supertop-img {
-  height: 100%; aspect-ratio: auto;
+  height: auto; aspect-ratio: 16/10;
   width: 180px; flex-shrink: 0;
 }
 .supertop-card-small .supertop-text {
