@@ -171,14 +171,14 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .feed { padding: 16px 0; }
 .feed-layout {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 25% 50% 25%;
   gap: 16px;
 }
 .feed-left {
   padding: 0; background: none; min-height: 0;
 }
 .feed-left-header {
-  padding: 16px; border-bottom: 1px solid var(--ui-block-border, #EAEAEA);
+  padding: 16px 0; border-bottom: 1px solid var(--ui-block-border, #EAEAEA);
 }
 .feed-left-header h3 {
   font-family: 'TT Neoris', sans-serif;
@@ -187,7 +187,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   text-transform: uppercase;
 }
 .feed-left-list {
-  list-style: none; padding: 8px 16px;
+  list-style: none; padding: 8px 0;
 }
 .feed-left-list li {
   padding: 8px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
@@ -217,7 +217,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 /* Right column */
 .feed-right-block {
   background: var(--ui-bg, #fff);
-  padding: 16px; margin-bottom: 12px;
+  padding: 16px 0; margin-bottom: 12px;
 }
 .feed-right-header {
   font-size: 14px; font-weight: 600;
