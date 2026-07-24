@@ -33,7 +33,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   position: sticky; top: 0; z-index: 100;
 }
 .header-inner {
-  max-width: 1480px; margin: 0 auto;
+  max-width: 1400px; margin: 0 auto;
   height: 100%;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 16px;
@@ -98,7 +98,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 
 /* ===== Teaser Zone ===== */
 .teaser { padding: 12px 0 0; margin-bottom:48px; }
-.teaser-inner { max-width: 1480px; margin: 0 auto; padding: 0 16px; }
+.teaser-inner { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
 
 /* Tears top row */
 .teaser-top {
