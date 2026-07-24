@@ -121,7 +121,17 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .supertop-card { cursor: pointer; position: relative; }
 .supertop-card-main .supertop-img { height: 468px; }
-.supertop-card-small .supertop-img { height: calc((400px - 8px) / 2); }
+.supertop-card-small {
+  display: flex; gap: 12px;
+}
+.supertop-card-small .supertop-img {
+  height: auto; aspect-ratio: auto;
+  width: 180px; flex-shrink: 0;
+}
+.supertop-card-small .supertop-text {
+  padding: 0; flex: 1; min-width: 0;
+  display: flex; flex-direction: column; justify-content: center;
+}
 
 .supertop-img {
   overflow: hidden; position: relative;
