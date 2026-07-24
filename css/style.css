@@ -120,10 +120,10 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   gap: 16px;
 }
 .supertop-card { cursor: pointer; position: relative; }
-.supertop-card-main .supertop-img { height: 468px; }
+.supertop-card-main .supertop-img { height: 400px; }
 .supertop-card-small {
   display: flex; gap: 12px;
-  height: 230px;
+  height: 196px;
 }
 .supertop-card-small .supertop-img {
   height: auto; aspect-ratio: 16/10;
