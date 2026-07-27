@@ -252,6 +252,47 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .feed-poll-bar.active span { background: var(--ui-primary, #00A876); }
 .feed-poll-votes { font-size: 11px; color: var(--ui-tertiary, #9B9B9B); margin-top: 8px; display: block; }
 
+/* ===== Betting Widget ===== */
+.feed-betting { padding: 0; background: none; }
+.feed-betting-bg {
+  background: #470079; padding: 16px; color: #fff;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.feed-betting-header {
+  display: flex; align-items: center; gap: 8px;
+}
+.feed-betting-icon { font-size: 20px; }
+.feed-betting-title {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 18px; font-weight: 500; color: var(--ui-fill, #F4F4F4);
+}
+.feed-betting-matches { display: flex; flex-direction: column; gap: 16px; }
+.feed-betting-match { display: flex; flex-direction: column; gap: 8px; }
+.feed-betting-info { display: flex; justify-content: space-between; font-size: 12px; }
+.feed-betting-league { font-family: 'TT Neoris', sans-serif; font-weight: 400; color: var(--ui-fill, #F4F4F4); }
+.feed-betting-date { font-family: 'TT Neoris', sans-serif; font-weight: 400; color: #fff; }
+.feed-betting-teams { font-size: 14px; color: #fff; }
+.feed-betting-btn {
+  width: 100%; padding: 10px; border: none;
+  background: rgba(255,255,255,0.15); color: #fff;
+  font-family: 'TT Neoris', sans-serif; font-size: 14px; font-weight: 500;
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer;
+}
+.feed-betting-btn span { font-weight: 700; }
+.feed-betting-pagination { display: flex; justify-content: center; gap: 8px; }
+.feed-betting-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--ui-secondary, #7F7F7F);
+}
+.feed-betting-dot.active { background: var(--ui-fill, #F4F4F4); }
+.feed-betting-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px;
+}
+.feed-betting-footer span:first-child { font-family: 'TT Neoris', sans-serif; font-weight: 400; color: var(--ui-additional, #D8D8D8); }
+.feed-betting-age { font-family: 'TT Neoris', sans-serif; font-size: 10px; color: var(--ui-secondary, #9B9B9B); }
+
 /* Sport news list */
 .feed-sport-list { list-style: none; }
 .feed-sport-list li {
