@@ -182,8 +182,9 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .feed-left-header h3 {
   font-family: 'TT Sports Display', sans-serif;
-  font-size: 16px; font-weight: 600;
+  font-size: 14px; font-weight: 600;
   color: var(--ui-content, #222);
+  text-transform: uppercase;
 }
 .feed-left-list {
   list-style: none; padding: 8px 0;
@@ -219,6 +220,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   padding: 16px 0; margin-bottom: 12px;
 }
 .feed-right-header {
+  font-family: 'TT Sports Display', sans-serif;
   font-size: 14px; font-weight: 600;
   color: var(--ui-content, #222);
   text-transform: uppercase; margin-bottom: 12px;
