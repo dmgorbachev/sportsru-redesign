@@ -181,17 +181,16 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   padding: 16px 0; border-bottom: 1px solid var(--ui-block-border, #EAEAEA);
 }
 .feed-left-header h3 {
-  font-family: 'TT Neoris', sans-serif;
-  font-size: 14px; font-weight: 600;
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 16px; font-weight: 600;
   color: var(--ui-content, #222);
-  text-transform: uppercase;
 }
 .feed-left-list {
   list-style: none; padding: 8px 0;
 }
 .feed-left-list li {
   padding: 8px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
-  font-size: 13px; line-height: 1.4;
+  font-size: 16px; line-height: 1.4;
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px;
 }
 .feed-left-list li:last-child { border-bottom: none; }
@@ -230,9 +229,9 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .feed-tab.active { color: var(--ui-content, #222); font-weight: 500; }
 .feed-right-league {
-  font-size: 12px; color: var(--ui-secondary, #7F7F7F); margin-bottom: 8px;
+  font-size: 14px; color: var(--ui-secondary, #7F7F7F); margin-bottom: 8px;
 }
-.feed-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+.feed-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 8px; }
 .feed-table th { text-align: left; color: var(--ui-tertiary, #9B9B9B); padding: 4px 0; font-weight: 400; }
 .feed-table td { padding: 3px 0; color: var(--ui-content, #222); }
 .feed-table-link { font-size: 12px; color: var(--ui-primary, #00A876); text-decoration: none; }
