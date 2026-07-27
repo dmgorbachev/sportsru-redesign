@@ -235,7 +235,7 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 }
 .feed-tab.active {
   color: #fff;
-  background: var(--ui-content, #222222);
+  background: var(--ui-inverted-content, #222222);
 }
 .feed-right-league {
   font-size: 14px; color: var(--ui-secondary, #7F7F7F); margin-bottom: 8px;
