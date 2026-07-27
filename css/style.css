@@ -502,10 +502,18 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   .header-right .header-btn:nth-child(4),
   .header-right .header-btn:nth-child(5) { display: none; }
   .teaser-inner { padding: 0 12px; }
+  .supertop { margin-bottom: 24px; }
   .supertop-cards { grid-template-columns: 1fr; }
-  .supertop-right { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .supertop-card-main .supertop-img { height: auto; aspect-ratio: 16/9; }
-  .supertop-card-small .supertop-img { height: auto; aspect-ratio: 16/9; }
+  .supertop-card-small {
+    display: flex; flex-direction: column; gap: 8px;
+    height: auto;
+  }
+  .supertop-card-small .supertop-img {
+    width: 100%; height: auto; aspect-ratio: 16/9;
+  }
+  .supertop-card-small .supertop-text { padding: 4px 0; }
+  .supertop-right { display: flex; flex-direction: column; gap: 12px; }
   .teaser-top { margin-bottom: 12px; }
   .teaser-sport { margin-bottom: 12px; }
   .teaser-sport-header { padding: 0 12px; font-size: 14px; }
@@ -559,9 +567,15 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   }
   .match-card { min-width: 220px; max-width: 240px; flex-shrink: 0; }
   .supertop-cards { grid-template-columns: 1fr; }
-  .supertop-right { grid-template-columns: 1fr; }
   .supertop-card-main .supertop-img { height: auto; aspect-ratio: 16/9; }
-  .supertop-card-small .supertop-img { height: auto; aspect-ratio: 16/9; }
+  .supertop-card-small {
+    display: flex; flex-direction: column; gap: 8px; height: auto;
+  }
+  .supertop-card-small .supertop-img {
+    width: 100%; height: auto; aspect-ratio: 16/9;
+  }
+  .supertop-card-small .supertop-text { padding: 4px 0; }
+  .supertop-right { display: flex; flex-direction: column; gap: 12px; }
   .feed-layout { grid-template-columns: 1fr; }
   .feed-card { flex-direction: column; }
   .feed-card-img { width: 100%; aspect-ratio: 16/10; }
