@@ -300,8 +300,8 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 /* Sport news list */
 .feed-sport-list { list-style: none; }
 .feed-sport-list li {
-  padding: 6px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
-  font-size: 13px; line-height: 1.4;
+  padding: 16px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
+  font-size: 14px; line-height: 1.6;
 }
 .feed-sport-list li:last-child { border-bottom: none; }
 .feed-sport-list time {
