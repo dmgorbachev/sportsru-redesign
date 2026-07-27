@@ -258,7 +258,16 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
 .feed-betting-bg {
   background: #470079; padding: 16px; color: #fff;
   display: flex; flex-direction: column; gap: 16px;
+  position: relative; overflow: hidden;
 }
+.feed-betting-pattern {
+  position: absolute; top: -40px; right: -30px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%),
+              conic-gradient(from 0deg, transparent 0deg, rgba(255,255,255,0.04) 90deg, transparent 180deg, rgba(255,255,255,0.04) 270deg, transparent 360deg);
+  pointer-events: none;
+}
+.feed-betting-matches, .feed-betting-header, .feed-betting-pagination, .feed-betting-footer { position: relative; z-index: 1; }
 .feed-betting-header {
   display: flex; align-items: center; gap: 8px;
 }
@@ -267,23 +276,40 @@ body { font-family: 'TT Neoris', sans-serif; background: var(--ui-bg, #fff); }
   font-family: 'TT Neoris', sans-serif;
   font-size: 18px; font-weight: 500; color: var(--ui-fill, #F4F4F4);
 }
-.feed-betting-matches { display: flex; flex-direction: column; gap: 16px; }
+.feed-betting-matches { display: flex; flex-direction: column; gap: 20px; }
 .feed-betting-match { display: flex; flex-direction: column; gap: 8px; }
-.feed-betting-info { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.feed-betting-info { display: flex; align-items: center; font-size: 12px; }
 .feed-betting-league { font-family: 'TT Neoris', sans-serif; font-weight: 400; color: var(--ui-fill, #F4F4F4); }
 .feed-betting-date { font-family: 'TT Neoris', sans-serif; font-weight: 400; color: #fff; margin-left: auto; margin-right: 8px; }
 .feed-betting-arrow { font-size: 18px; color: #fff; line-height: 1; }
-.feed-betting-teams { display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #fff; }
-.feed-betting-team { font-weight: 500; }
-.feed-betting-vs { color: rgba(255,255,255,0.4); }
-.feed-betting-btn {
-  width: 100%; padding: 10px; border: none;
-  background: rgba(255,255,255,0.12); color: #fff;
-  font-family: 'TT Neoris', sans-serif; font-size: 14px; font-weight: 500;
-  text-align: left; line-height: 1.3;
-  cursor: pointer;
+
+.feed-betting-row { display: flex; flex-direction: column; gap: 8px; }
+.feed-betting-teams {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4px;
 }
-.feed-betting-btn span { float: right; font-weight: 700; }
+.feed-betting-team {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500; color: #fff;
+}
+.feed-betting-crest {
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.feed-betting-vs { color: rgba(255,255,255,0.35); font-size: 12px; }
+
+.feed-betting-btn {
+  width: 100%; padding: 10px 12px; border: none;
+  background: rgba(255,255,255,0.10); color: #fff;
+  font-family: 'TT Neoris', sans-serif; font-size: 14px; font-weight: 500;
+  line-height: 1.3;
+  cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.feed-betting-btn-text { text-align: left; }
+.feed-betting-odd { font-weight: 700; flex-shrink: 0; }
 .feed-betting-pagination { display: flex; justify-content: center; gap: 8px; }
 .feed-betting-dot {
   width: 8px; height: 8px; border-radius: 50%;
