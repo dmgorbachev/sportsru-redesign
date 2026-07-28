@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 6: Split</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; color: #fff; font-family: 'TT Neoris', sans-serif; height: 100vh; overflow: hidden; }
+    .hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); }
+    .hdr-logo { font-family: 'TT Sports Display', sans-serif; font-size: 20px; font-weight: 700; }
+    .hdr-meta { font-size: 12px; color: #505050; }
+    .hdr-live { font-size: 12px; color: #ff4848; display: flex; align-items: center; gap: 6px; }
+    .hdr-dot { width: 6px; height: 6px; background: #ff4848; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* Split layout */
+    .split { display: flex; height: 100vh; padding-top: 56px; }
+    .half { flex: 1; position: relative; cursor: pointer; overflow: hidden; display: flex; align-items: flex-end; transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .half:hover { flex: 1.3; }
+    .half-bg { position: absolute; inset: 0; }
+    .half-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%); }
+    .half-content { position: relative; z-index: 2; padding: 40px; width: 100%; }
+    .half-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .half-left .half-tag { color: #00a876; }
+    .half-right .half-tag { color: #ff4848; }
+    .half h2 { font-family: 'TT Sports Display', sans-serif; font-size: 48px; font-weight: 700; line-height: 1; margin-bottom: 12px; }
+    .half p { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.5; max-width: 400px; margin-bottom: 16px; }
+    .half-meta { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+    /* Center stripe */
+    .stripe { width: 2px; background: #222; flex-shrink: 0; position: relative; z-index: 3; }
+    .stripe-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: #0a0a0a; border: 2px solid #333; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+
+    /* Bottom ticker */
+    .ticker { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); border-top: 1px solid #1a1a1a; padding: 12px 24px; display: flex; gap: 32px; overflow-x: auto; font-size: 13px; }
+    .ticker-item { white-space: nowrap; cursor: pointer; flex-shrink: 0; }
+    .ticker-item:hover { color: #00a876; }
+    .ticker-tag { color: #505050; font-weight: 700; margin-right: 6px; }
+
+    @media (max-width: 800px) {
+      .split { flex-direction: column; }
+      .stripe { width: 100%; height: 2px; }
+      .stripe-badge { width: 36px; height: 36px; font-size: 10px; }
+      .half h2 { font-size: 28px; }
+      .half:hover { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="hdr-logo">СПОРТС</div>
+    <div class="hdr-live"><span class="hdr-dot"></span> Зенит — Спартак 2:1, 67'</div>
+    <div class="hdr-meta">Пн 28 июля • 16:42 МСК</div>
+  </header>
+
+  <div class="split">
+    <!-- LEFT: FOOTBALL -->
+    <div class="half half-left">
+      <div class="half-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)"></div>
+      <div class="half-overlay"></div>
+      <div class="half-content">
+        <div class="half-tag">Футбол • ЧМ-2026</div>
+        <h2>Испания — чемпион мира</h2>
+        <p>Голы Ямала и Гави переписали историю. Де ла Фуэнте построил машину, которую невозможно остановить.</p>
+        <div class="half-meta">Вадим Лукомский • 18 мин • +480 • 🔥 210</div>
+      </div>
+    </div>
+
+    <div class="stripe">
+      <div class="stripe-badge">VS</div>
+    </div>
+
+    <!-- RIGHT: TRANSFERS -->
+    <div class="half half-right">
+      <div class="half-bg" style="background: linear-gradient(135deg, #3e1a1a 0%, #601a1a 100%)"></div>
+      <div class="half-overlay"></div>
+      <div class="half-content">
+        <div class="half-tag">Трансферы • Бомба дня</div>
+        <h2>Винисиус — в «Арсенал»</h2>
+        <p>€180 млн. Рекорд Премьер-лиги. «Реал» молчит. Сделка, которая взорвала рынок этим летом.</p>
+        <div class="half-meta">Артём Соколов • 5 мин • +340 • 🔥 156</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-item"><span class="ticker-tag">НХЛ</span>Овечкин — в «Динамо». Контракт на год</div>
+    <div class="ticker-item"><span class="ticker-tag">НБА</span>Леброн выбрал «Филадельфию»</div>
+    <div class="ticker-item"><span class="ticker-tag">Скандал</span>Пирло, Fonbet и ханжество</div>
+    <div class="ticker-item"><span class="ticker-tag">Теннис</span>Медведев: «Я не играю ради рейтинга»</div>
+    <div class="ticker-item"><span class="ticker-tag">Live</span>ЦСКА — Динамо 0:0, 34'</div>
+    <div class="ticker-item"><span class="ticker-tag">РПЛ</span>«Спартак» покупает защитника «Зенита»</div>
+  </div>
+
+</body>
+</html>

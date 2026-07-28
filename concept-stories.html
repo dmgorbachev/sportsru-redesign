@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 8: Stories</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; color: #fff; font-family: 'TT Neoris', sans-serif; }
+    .hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); }
+    .hdr-logo { font-family: 'TT Sports Display', sans-serif; font-size: 20px; font-weight: 700; }
+    .hdr-live { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #ff4848; }
+    .hdr-dot { width: 6px; height: 6px; background: #ff4848; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* Story carousel */
+    .carousel { height: 100vh; overflow-x: auto; scroll-snap-type: x mandatory; display: flex; scroll-behavior: smooth; }
+    .carousel::-webkit-scrollbar { display: none; }
+
+    .story { flex-shrink: 0; width: 100vw; height: 100vh; scroll-snap-align: start; position: relative; display: flex; align-items: flex-end; cursor: pointer; }
+    .story-bg { position: absolute; inset: 0; }
+    .story-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.05) 100%); }
+    .story-content { position: relative; z-index: 2; padding: 40px 48px 80px; max-width: 700px; }
+    .story-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .story h2 { font-family: 'TT Sports Display', sans-serif; font-size: 64px; font-weight: 700; line-height: 1; margin-bottom: 12px; }
+    .story p { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .story-meta { font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 16px; display: flex; gap: 16px; }
+    .story-meta span { color: #00a876; }
+
+    /* Progress bar */
+    .progress { position: fixed; top: 56px; left: 0; right: 0; z-index: 100; display: flex; gap: 4px; padding: 4px 16px; }
+    .progress-bar { flex: 1; height: 3px; background: #222; }
+    .progress-bar.active { background: #fff; }
+
+    /* Nav dots */
+    .nav { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; gap: 16px; }
+    .nav-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; transition: all 0.2s; }
+    .nav-dot.active { background: #fff; border-color: #fff; }
+    .nav-dot:hover { border-color: #fff; }
+
+    /* Counter */
+    .counter { position: fixed; top: 72px; right: 24px; z-index: 100; font-size: 13px; color: rgba(255,255,255,0.4); font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 800px) {
+      .story h2 { font-size: 36px; }
+      .story-content { padding: 24px 24px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="hdr-logo">СПОРТС</div>
+    <div class="hdr-live"><span class="hdr-dot"></span> Зенит — Спартак 2:1, 67'</div>
+  </header>
+
+  <div class="progress">
+    <div class="progress-bar active"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="counter">01 / 05</div>
+
+  <div class="carousel" id="carousel">
+
+    <!-- STORY 1 -->
+    <div class="story">
+      <div class="story-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"></div>
+      <div class="story-overlay"></div>
+      <div class="story-content">
+        <div class="story-tag">Специальный репортаж</div>
+        <h2>Великая Испания</h2>
+        <p>Как команда, которую списали после Катара, переизобрела футбол и забрала мир. Голы Ямала и Гави в финале против Аргентины — это не просто победа. Это манифест нового футбола.</p>
+        <div class="story-meta"><span>Вадим Лукомский</span><span>18 мин</span><span>+480</span></div>
+      </div>
+    </div>
+
+    <!-- STORY 2 -->
+    <div class="story">
+      <div class="story-bg" style="background: linear-gradient(135deg, #3e1a1a 0%, #7b241c 50%, #c0392b 100%)"></div>
+      <div class="story-overlay"></div>
+      <div class="story-content">
+        <div class="story-tag">Трансферы • Бомба дня</div>
+        <h2>Винисиус — в «Арсенал»</h2>
+        <p>€180 млн. Рекорд Премьер-лиги. Бразилец может покинуть «Реал» этим летом. Английский клуб готовит крупнейшую сделку в истории. Весь рынок замер.</p>
+        <div class="story-meta"><span>Артём Соколов</span><span>5 мин</span><span>+340</span></div>
+      </div>
+    </div>
+
+    <!-- STORY 3 -->
+    <div class="story">
+      <div class="story-bg" style="background: linear-gradient(135deg, #1a3a2e 0%, #0e6655 50%, #00a876 100%)"></div>
+      <div class="story-overlay"></div>
+      <div class="story-content">
+        <div class="story-tag">Интервью</div>
+        <h2>«Я не играю ради рейтинга»</h2>
+        <p>Даниил Медведев — о теннисе, деньгах, России и о том, почему он больше не хочет быть первой ракеткой мира. Самый откровенный разговор года.</p>
+        <div class="story-meta"><span>Софья Тартакова</span><span>12 мин</span><span>+95</span></div>
+      </div>
+    </div>
+
+    <!-- STORY 4 -->
+    <div class="story">
+      <div class="story-bg" style="background: linear-gradient(135deg, #2e1a3e 0%, #533483 50%, #8e44ad 100%)"></div>
+      <div class="story-overlay"></div>
+      <div class="story-content">
+        <div class="story-tag">Скандал</div>
+        <h2>Пирло против системы</h2>
+        <p>Контракт с российским букмекером стоил легенде места в сборной Италии. Где футбол, а где политика? Полная хронология скандала, который разделил страну.</p>
+        <div class="story-meta"><span>Никита Курбатов</span><span>7 мин</span><span>+180</span></div>
+      </div>
+    </div>
+
+    <!-- STORY 5 -->
+    <div class="story">
+      <div class="story-bg" style="background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #161616 100%)"></div>
+      <div class="story-overlay"></div>
+      <div class="story-content">
+        <div class="story-tag">Лонгрид</div>
+        <h2>153 кило томатов</h2>
+        <p>Как испанская деревня чествовала Гави и Руиса после финала ЧМ. Томатная битва, серенады и обещание вернуться. Репортаж из места, где футбол — это жизнь.</p>
+        <div class="story-meta"><span>По самые помидоры</span><span>6 мин</span><span>+92</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav">
+    <span class="nav-dot active" onclick="document.getElementById('carousel').scrollTo({left:0,behavior:'smooth'})"></span>
+    <span class="nav-dot" onclick="document.getElementById('carousel').scrollTo({left:window.innerWidth,behavior:'smooth'})"></span>
+    <span class="nav-dot" onclick="document.getElementById('carousel').scrollTo({left:window.innerWidth*2,behavior:'smooth'})"></span>
+    <span class="nav-dot" onclick="document.getElementById('carousel').scrollTo({left:window.innerWidth*3,behavior:'smooth'})"></span>
+    <span class="nav-dot" onclick="document.getElementById('carousel').scrollTo({left:window.innerWidth*4,behavior:'smooth'})"></span>
+  </div>
+
+</body>
+</html>
