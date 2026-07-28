@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 1: Обложка</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: #161616; }
+    .page { max-width: 1400px; margin: 0 auto; }
+
+    /* === HERO — full bleed === */
+    .hero { position: relative; aspect-ratio: 16/7; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); overflow: hidden; display: flex; align-items: flex-end; }
+    .hero-bg { position: absolute; inset: 0; opacity: 0.3; background: radial-gradient(circle at 70% 30%, #e94560 0%, transparent 60%), radial-gradient(circle at 30% 70%, #533483 0%, transparent 50%); }
+    .hero-content { position: relative; z-index: 2; padding: 48px; max-width: 800px; }
+    .hero-label { font-family: 'TT Neoris', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff4848; margin-bottom: 16px; }
+    .hero-title { font-family: 'TT Sports Display', sans-serif; font-size: 72px; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -2px; margin-bottom: 20px; }
+    .hero-sub { font-family: 'TT Neoris', sans-serif; font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 24px; }
+    .hero-meta { display: flex; gap: 24px; font-size: 14px; color: rgba(255,255,255,0.5); }
+    .hero-meta span { color: #00a876; font-weight: 600; }
+
+    /* === STRIP — hot now === */
+    .strip { background: #0d0d0d; padding: 16px 48px; display: flex; gap: 32px; overflow-x: auto; }
+    .strip-item { display: flex; align-items: center; gap: 12px; white-space: nowrap; cursor: pointer; flex-shrink: 0; }
+    .strip-dot { width: 8px; height: 8px; background: #ff4848; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .strip-tag { font-family: 'TT Neoris', sans-serif; font-size: 12px; font-weight: 700; color: #505050; text-transform: uppercase; letter-spacing: 1px; }
+    .strip-text { font-family: 'TT Neoris', sans-serif; font-size: 14px; color: #d8d8d8; }
+    .strip-time { font-size: 12px; color: #505050; margin-left: auto; }
+
+    /* === GRID — 3 stories === */
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #222; }
+    .grid3-card { background: #1a1a1a; padding: 32px; cursor: pointer; transition: background 0.2s; }
+    .grid3-card:hover { background: #222; }
+    .grid3-num { font-family: 'TT Sports Display', sans-serif; font-size: 64px; font-weight: 700; color: #333; line-height: 1; margin-bottom: 12px; }
+    .grid3-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #00a876; margin-bottom: 8px; }
+    .grid3-title { font-family: 'TT Sports Display', sans-serif; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+    .grid3-desc { font-size: 14px; color: #7f7f7f; line-height: 1.5; margin-bottom: 12px; }
+    .grid3-meta { font-size: 13px; color: #505050; }
+
+    /* === SECTION: разборы === */
+    .section { padding: 48px; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .section-title { font-family: 'TT Sports Display', sans-serif; font-size: 32px; font-weight: 700; color: #fff; }
+    .section-count { font-family: 'TT Neoris', sans-serif; font-size: 14px; color: #505050; }
+
+    .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .card { cursor: pointer; }
+    .card:hover .card-title { color: #00a876; }
+    .card-img { aspect-ratio: 3/2; background: #222; margin-bottom: 12px; }
+    .card-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #00a876; margin-bottom: 6px; }
+    .card-title { font-family: 'TT Sports Display', sans-serif; font-size: 18px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px; transition: color 0.2s; }
+    .card-author { font-size: 13px; color: #505050; }
+
+    /* === FEATURE: long read === */
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 48px; background: #111; align-items: center; }
+    .feature-img { aspect-ratio: 4/5; background: #1a1a2e; }
+    .feature-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff4848; margin-bottom: 12px; }
+    .feature-title { font-family: 'TT Sports Display', sans-serif; font-size: 40px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .feature-text { font-size: 16px; color: #9b9b9b; line-height: 1.6; margin-bottom: 16px; }
+    .feature-btn { display: inline-block; padding: 12px 24px; border: 1px solid #fff; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
+
+    /* === Responsive === */
+    @media (max-width: 860px) {
+      .hero-title { font-size: 36px; }
+      .hero-content { padding: 24px; }
+      .strip { padding: 12px 16px; }
+      .grid3, .cards-4 { grid-template-columns: 1fr; }
+      .feature { grid-template-columns: 1fr; padding: 24px; }
+      .section { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">Специальный репортаж</div>
+      <h1 class="hero-title">Великая Испания</h1>
+      <p class="hero-sub">Как команда, в которую никто не верил после провала в Катаре, переизобрела футбол и забрала мир. История одного золотого поколения — от стыда до бессмертия.</p>
+      <div class="hero-meta">
+        <span>Вадим Лукомский</span>
+        <span>24 минуты чтения</span>
+        <span>+480</span>
+        <span>🔥 210</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE STRIP -->
+  <div class="strip">
+    <div class="strip-item"><span class="strip-dot"></span><span class="strip-tag">Live</span><span class="strip-text">Зенит — Спартак 2:1, 67'</span></div>
+    <div class="strip-item"><span class="strip-dot"></span><span class="strip-tag">Live</span><span class="strip-text">ЦСКА — Динамо 0:0, 34'</span></div>
+    <div class="strip-item"><span class="strip-tag">Трансферы</span><span class="strip-text">Винисиус — в «Арсенал» за €180 млн</span><span class="strip-time">15:42</span></div>
+    <div class="strip-item"><span class="strip-tag">НХЛ</span><span class="strip-text">Овечкин подписал контракт с «Динамо»</span><span class="strip-time">14:20</span></div>
+    <div class="strip-item"><span class="strip-tag">НБА</span><span class="strip-text">Леброн выбрал «Филадельфию»</span><span class="strip-time">13:05</span></div>
+    <div class="strip-item"><span class="strip-tag">Теннис</span><span class="strip-text">Медведев снялся с турнира в Торонто</span><span class="strip-time">11:30</span></div>
+  </div>
+
+  <!-- TOP 3 -->
+  <div class="grid3">
+    <article class="grid3-card">
+      <div class="grid3-num">01</div>
+      <div class="grid3-tag">Баскетбол</div>
+      <h3 class="grid3-title">Леброн Джеймс — в «Филадельфии». Как это вообще случилось?</h3>
+      <p class="grid3-desc">39-летний король выбрал «Сиксерс». Город в истерике — от ликования до шока. Инсайд сделки века.</p>
+      <div class="grid3-meta">Антон Швец • 8 мин • +340 • 🔥 156</div>
+    </article>
+    <article class="grid3-card">
+      <div class="grid3-num">02</div>
+      <div class="grid3-tag">Хоккей</div>
+      <h3 class="grid3-title">Овечкин возвращается. «Динамо» ждёт царя</h3>
+      <p class="grid3-desc">895 голов в НХЛ — и теперь Москва. Что Ови даст КХЛ, сколько заработает и почему именно сейчас.</p>
+      <div class="grid3-meta">Павел Лысенков • 6 мин • +210 • 🔥 94</div>
+    </article>
+    <article class="grid3-card">
+      <div class="grid3-num">03</div>
+      <div class="grid3-tag">Футбол</div>
+      <h3 class="grid3-title">Скандал века: Пирло, Fonbet и итальянская федерация</h3>
+      <p class="grid3-desc">Легенду не пустили в сборную из-за контракта с российским букмекером. Где спорт, а где политика?</p>
+      <div class="grid3-meta">Никита Курбатов • 5 мин • +180 • 🔥 320</div>
+    </article>
+  </div>
+
+  <!-- РАЗБОРЫ -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Разборы</h2>
+      <span class="section-count">6 материалов</span>
+    </div>
+    <div class="cards-4">
+      <article class="card"><div class="card-img" style="background:#1a3a5c"></div><div class="card-tag">Тактика</div><h3 class="card-title">Почему Месси потерялся в финале</h3><div class="card-author">Вадим Лукомский</div></article>
+      <article class="card"><div class="card-img" style="background:#533483"></div><div class="card-tag">Аналитика</div><h3 class="card-title">50 выводов после чемпионата мира</h3><div class="card-author">Денис Романцов</div></article>
+      <article class="card"><div class="card-img" style="background:#7b241c"></div><div class="card-tag">Трансферы</div><h3 class="card-title">Кто заменит Мбаппе в «ПСЖ»? Пять сценариев</h3><div class="card-author">Артём Соколов</div></article>
+      <article class="card"><div class="card-img" style="background:#0e6655"></div><div class="card-tag">Интервью</div><h3 class="card-title">«Я не играю ради рейтинга». Большой разговор с Медведевым</h3><div class="card-author">Софья Тартакова</div></article>
+    </div>
+  </div>
+
+  <!-- FEATURE -->
+  <div class="feature">
+    <div class="feature-img"></div>
+    <div>
+      <div class="feature-label">Лонгрид</div>
+      <h2 class="feature-title">153 кило томатов — двум чемпионам мира</h2>
+      <p class="feature-text">Как испанская деревня чествовала Гави и Руиса после финала. Томатная битва, серенады и обещание вернуться. Репортаж из места, где футбол — это жизнь.</p>
+      <a href="#" class="feature-btn">Читать историю</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
