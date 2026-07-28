@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="/" class="header-logo">
+          <img src="images/Type=Cyrilic Full.svg" alt="Sports.ru" width="102" height="26">
+        </a>
+        <nav class="header-nav">
+          <button class="header-nav-toggle" aria-label="Меню">
+            <img src="images/icons/menu 3.svg" alt="" width="24" height="24">
+          </button>
+          <ul class="header-nav-list">
+            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Трибуна</a></li>
+            <li><a href="#">Ставки</a></li>
+            <li><a href="#">Футбол</a></li>
+            <li><a href="#">Фигурка</a></li>
+            <li><a href="#">Баскет</a></li>
+            <li><a href="#">Теннис</a></li>
+            <li><a href="#">Бокс</a></li>
+            <li><a href="#">Авто</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button class="header-btn" aria-label="Прямой эфир">
+          <img src="images/icons/video 2.svg" alt="" width="24" height="24">
+        </button>
+        <button class="header-btn" aria-label="Поиск">
+          <img src="images/icons/search.svg" alt="" width="24" height="24">
+        </button>
+        <button class="header-btn" aria-label="Уведомления">
+          <img src="images/icons/notification.svg" alt="" width="24" height="24">
+        </button>
+        <button class="header-btn" aria-label="Написать">
+          <img src="images/icons/edit.svg" alt="" width="24" height="24">
+        </button>
+        <button class="header-avatar" aria-label="Профиль">
+          <span class="header-avatar-circle"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- TEASER ZONE -->
+  <main class="teaser">
+    <div class="teaser-inner">
+
+      <!-- Header: МАТЧИ СЕГОДНЯ -->
+      <div class="teaser-top">
+        <h2 class="teaser-title">МАТЧИ СЕГОДНЯ</h2>
+        <button class="teaser-all-btn">Все матчи <img src="images/icons/arrow right.svg" alt="" width="16" height="16"></button>
+      </div>
+
+      <!-- FOOTBALL -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="football">
+          <div class="teaser-sport-name">
+            <img src="images/icons/football.svg" alt="" width="24" height="24">
+            <span>Футбол. Чемпионат Мира 2026</span>
+          </div>
+          <img src="images/icons/arrow up.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-broadcast">📺 Okko</span>
+              <span class="match-time">22:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Арсенал</span><span class="match-team-logo" style="background:#e81e25">А</span></div>
+              <div class="match-score">2 : 1</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#c4122e">Л</span><span>Ливерпуль</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">1.85</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.40</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">4.20</span></div>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-time">22:45</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Интер</span><span class="match-team-logo" style="background:#0066b3">И</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#d50000">М</span><span>Милан</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">2.10</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.10</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">3.80</span></div>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-time">23:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Барселона</span><span class="match-team-logo" style="background:#a50044">Б</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#febe10">Р</span><span>Реал Мадрид</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">2.50</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.20</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">2.90</span></div>
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-time">19:30</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Зенит</span><span class="match-team-logo" style="background:#00a3e0">З</span></div>
+              <div class="match-score">3 : 0</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#e5172b">С</span><span>Спартак</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">1.65</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.80</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">5.50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOCKEY -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="hockey">
+          <div class="teaser-sport-name">
+            <img src="images/icons/hockey.svg" alt="" width="24" height="24">
+            <span>Хоккей. Кубок Стенли 2025/2026. Финал</span>
+          </div>
+          <img src="images/icons/arrow down.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards" style="display:none">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Кубок Стенли</span>
+              <span class="match-time">02:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Флорида</span><span class="match-team-logo" style="background:#c8102e">Ф</span></div>
+              <div class="match-score">4 : 2</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#003777">Э</span><span>Эдмонтон</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">2.20</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.50</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">3.10</span></div>
+            </div>
+          </div>
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">КХЛ</span>
+              <span class="match-time">19:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>ЦСКА</span><span class="match-team-logo" style="background:#e5172b">Ц</span></div>
+              <div class="match-score">— : —</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#d81e2b">С</span><span>СКА</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">2.40</span></div>
+              <div class="match-coeff">X <span class="match-coeff-val">3.30</span></div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">2.90</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TENNIS -->
+      <div class="teaser-sport">
+        <div class="teaser-sport-header" data-sport="tennis">
+          <div class="teaser-sport-name">
+            <img src="images/icons/tennis.svg" alt="" width="24" height="24">
+            <span>Теннис. Ролан Гаррос 2026</span>
+          </div>
+          <img src="images/icons/arrow down.svg" alt="" width="24" height="24">
+        </div>
+        <div class="teaser-cards" style="display:none">
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Мужчины. Одиночный</span>
+              <span class="match-time">15:00</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Алькарас</span><span class="match-team-logo" style="background:#ff6600">А</span></div>
+              <div class="match-score">3 : 1</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#0066cc">С</span><span>Синнер</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">1.80</span></div>
+              <div class="match-coeff">—</div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">2.10</span></div>
+            </div>
+          </div>
+          <div class="match-card">
+            <div class="match-header">
+              <span class="match-league">Женщины. Одиночный</span>
+              <span class="match-time">12:30</span>
+            </div>
+            <div class="match-teams">
+              <div class="match-team"><span>Швёнтек</span><span class="match-team-logo" style="background:#e5172b">Ш</span></div>
+              <div class="match-score">2 : 0</div>
+              <div class="match-team"><span class="match-team-logo" style="background:#006b3f">С</span><span>Соболенко</span></div>
+            </div>
+            <div class="match-coeffs">
+              <div class="match-coeff">П1 <span class="match-coeff-val">1.55</span></div>
+              <div class="match-coeff">—</div>
+              <div class="match-coeff">П2 <span class="match-coeff-val">2.65</span></div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        </main>
+
+        <!-- SUPERTOP ZONE -->
+        <section class="supertop">
+        <div class="teaser-inner">
+        <div class="supertop-cards">
+          <article class="supertop-card supertop-card-main">
+            <div class="supertop-img" style="background:url(images/supertop-main.webp) center/cover"></div>
+            <div class="supertop-text">
+              <h3 class="supertop-headline">Финал – типичная победа Испании на ЧМ. Это и есть фантастика!</h3>
+              <div class="supertop-bottom">
+                <span class="supertop-subtitle">Разбор Денисова и Палагина.</span>
+                <div class="supertop-stats">
+                  <span class="supertop-plus">+115</span>
+                  <span class="supertop-comments">🔥 158</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="supertop-right">
+            <article class="supertop-card supertop-card-small">
+              <div class="supertop-img" style="background:url(images/supertop-1.webp) center/cover"></div>
+              <div class="supertop-text">
+                <h3 class="supertop-headline">Как восстановить режим сна после ЧМ-2026?</h3>
+                <div class="supertop-bottom">
+                  <span class="supertop-subtitle">По шагам. Здоровье</span>
+                  <div class="supertop-stats">
+                    <span class="supertop-plus">+16</span>
+                    <span class="supertop-comments">🔥 9</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="supertop-card supertop-card-small">
+              <div class="supertop-img" style="background:url(images/supertop-2.webp) center/cover"></div>
+              <div class="supertop-text">
+                <h3 class="supertop-headline">Финал чемпионата мира вживую – это счастье родом из моего детства</h3>
+                <div class="supertop-bottom">
+                  <span class="supertop-subtitle">Владимир Иванов – из Нью-Йорка.</span>
+                  <div class="supertop-stats">
+                    <span class="supertop-plus">+50</span>
+                    <span class="supertop-comments">🔥 7</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        </div>
+        </section>
+
+         <!-- PLOT OF THE DAY -->
+        <section class="plot">
+          <div class="teaser-inner">
+            <div class="teaser-top">
+              <h2 class="teaser-title">СЮЖЕТ ДНЯ</h2>
+            </div>
+            <div class="plot-layout">
+              <article class="plot-main">
+                <div class="plot-main-img" style="background:#1a5276"></div>
+                <h3 class="plot-main-title">Трансфер Феррана Торреса — самый обсуждаемый переход лета. Что стоит за сделкой</h3>
+                <p class="plot-main-desc">Ферран Торрес переходит в клуб за рекордные 85 миллионов. Разбираем детали контракта.</p>
+                <div class="plot-stats">
+                  <span class="supertop-plus">+245</span>
+                  <span class="supertop-comments">🔥 89</span>
+                </div>
+              </article>
+              <div class="plot-side">
+                <article class="plot-side-card">
+                  <div class="plot-side-img" style="background:#2e4053"></div>
+                  <h4 class="plot-side-title">Почему «Барселона» решилась на продажу своего воспитанника</h4>
+                  <span class="feed-card-time">2 часа назад</span>
+                </article>
+                <article class="plot-side-card">
+                  <div class="plot-side-img" style="background:#7b241c"></div>
+                  <h4 class="plot-side-title">Топ-5 альтернатив Торресу: кого рассматривали клубы</h4>
+                  <span class="feed-card-time">3 часа назад</span>
+                </article>
+                <article class="plot-side-card">
+                  <div class="plot-side-img" style="background:#0e6655"></div>
+                  <h4 class="plot-side-title">Реакция болельщиков: соцсети взорвались мемами</h4>
+                  <span class="feed-card-time">4 часа назад</span>
+                </article>
+                <article class="plot-side-card">
+                  <div class="plot-side-img" style="background:#b9770e"></div>
+                  <h4 class="plot-side-title">Финансовый фейр-плей: как клуб обошёл ограничения УЕФА</h4>
+                  <span class="feed-card-time">5 часов назад</span>
+                </article>
+                <article class="plot-side-card">
+                  <div class="plot-side-img" style="background:#6c3483"></div>
+                  <h4 class="plot-side-title">Тренер: «Торрес — именно тот игрок, который нам нужен»</h4>
+                  <span class="feed-card-time">6 часов назад</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEED ZONE -->
+        <section class="feed">
+          <div class="teaser-inner">
+            <div class="feed-layout">
+              <aside class="feed-left">
+            <div class="feed-left-header">
+              <h3>ГЛАВНЫЕ НОВОСТИ</h3>
+            </div>
+            <ul class="feed-left-list">
+              <li><span class="feed-tag">Хоккей</span><time>15:17</time> <a href="#">Ротенберг о хоккеистах: «Нужно брать уроки актерского мастерства»</a><span class="feed-fire">11</span></li>
+              <li><span class="feed-tag">Футбол</span><time>15:12</time> <a href="#">Кахигао об отмене жребия перед пенальти с «Зенитом»</a><span class="feed-fire">41</span></li>
+              <li><span class="feed-tag">Футбол</span><time>15:10</time> <a href="#">Гвардиола – кандидат на пост тренера сборной Италии</a><span class="feed-fire">40</span></li>
+              <li><span class="feed-tag">Хоккей</span><time>15:01</time> <a href="#">Путин подписал указ об установлении Дня хоккея в России</a><span class="feed-fire">90</span></li>
+              <li><span class="feed-tag">Прочие</span><time>15:00</time> <a href="#">А велогонщики – миллионеры? Разобрали экономику «Тур де Франс»</a><span class="feed-fire">1</span></li>
+              <li><span class="feed-tag">Футбол</span><time>14:26</time> <a href="#">Президент Аргентины о Месси и критике ситуации в стране</a><span class="feed-fire">55</span></li>
+              <li><span class="feed-tag">Футбол</span><time>14:11</time> <a href="#">Аргентинцы получили все 9 последних карточек ЧМ-2026</a><span class="feed-fire">57</span></li>
+              <li><span class="feed-tag">Хоккей</span><time>14:07</time> <a href="#">Овечкин о любимом футбольном комментаторе: «Уткин»</a><span class="feed-fire">72</span></li>
+            </ul>
+          </aside>
+              <main class="feed-main">
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Основатель «Тур де Франс» хотел видеть страдания гонщиков на изматывающих этапах</h3>
+                <p class="feed-card-desc">История главной велогонки лета.</p>
+                <span class="feed-card-time">5 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#2e4053"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Передаю титул фэнтези-чемпиона. Итоги ЧМ с 8634-го места</h3>
+                <p class="feed-card-desc">От победителя Катара-2022.</p>
+                <span class="feed-card-time">30 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#7b241c"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Худший матч в карьере Рафаэля Надаля</h3>
+                <p class="feed-card-desc">Третья серия.</p>
+                <span class="feed-card-time">55 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#6c3483"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Я больше месяца провел на ЧМ – вот 50 случайных фото с моего телефона</h3>
+                <p class="feed-card-desc">Просто листайте.</p>
+                <span class="feed-card-time">сегодня, 11:20</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">10-летняя Есения станцевала с Шакирой на финале ЧМ. Чувствует ритм с 8 месяцев</h3>
+                <p class="feed-card-desc">Уже давно сама звезда.</p>
+                <span class="feed-card-time">сегодня, 10:55</span>
+              </div>
+            </article>
+          </main>
+              <aside class="feed-right">
+            <div class="feed-right-block">
+              <div class="feed-right-header">ТУРНИРНАЯ ТАБЛИЦА</div>
+              <div class="feed-right-tabs">
+                <span class="feed-tab active">Таблица</span>
+                <span class="feed-tab">Бомбардиры</span>
+                <span class="feed-tab">Ассистенты</span>
+              </div>
+              <div class="feed-right-league">Россия. Премьер-лига</div>
+              <table class="feed-table">
+                <thead><tr><th></th><th>Команда</th><th>М</th><th>О</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Зенит</td><td>1</td><td>3</td></tr>
+                  <tr><td>2</td><td>Спартак</td><td>1</td><td>3</td></tr>
+                  <tr><td>3</td><td>Краснодар</td><td>1</td><td>3</td></tr>
+                  <tr><td>4</td><td>Динамо Мх</td><td>1</td><td>3</td></tr>
+                  <tr><td>5</td><td>ЦСКА</td><td>1</td><td>3</td></tr>
+                  <tr><td>6</td><td>Оренбург</td><td>1</td><td>3</td></tr>
+                  <tr><td>7</td><td>Ахмат</td><td>1</td><td>1</td></tr>
+                  <tr><td>8</td><td>Локомотив</td><td>1</td><td>1</td></tr>
+                  <tr><td>9</td><td>Динамо</td><td>1</td><td>1</td></tr>
+                  <tr><td>10</td><td>Кр. Советов</td><td>1</td><td>1</td></tr>
+                  <tr><td>11</td><td>Балтика</td><td>1</td><td>0</td></tr>
+                  <tr><td>12</td><td>Ростов</td><td>1</td><td>0</td></tr>
+                </tbody>
+              </table>
+              <a href="#" class="feed-table-link">Полная таблица</a>
+            </div>
+
+            <div class="feed-right-block feed-betting">
+              <img src="images/betting-widget.png" alt="Вероятное число голов" style="width:100%;display:block;">
+            </div>
+          </aside>
+            </div>
+          </div>
+        </section>
+
+  <!-- TRIBUNA -->
+  <section class="plot">
+    <div class="teaser-inner">
+      <div class="teaser-top">
+        <h2 class="teaser-title">ТРИБУНА</h2>
+      </div>
+      <div class="plot-layout">
+        <article class="plot-main">
+          <div class="plot-main-img" style="background:#1a5276"></div>
+          <h3 class="plot-main-title">Трансфер Феррана Торреса — самый обсуждаемый переход лета. Что стоит за сделкой</h3>
+          <p class="plot-main-desc">Ферран Торрес переходит в клуб за рекордные 85 миллионов. Разбираем детали контракта.</p>
+          <div class="plot-stats">
+            <span class="supertop-plus">+245</span>
+            <span class="supertop-comments">🔥 89</span>
+          </div>
+        </article>
+        <div class="plot-side">
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#2e4053"></div>
+            <h4 class="plot-side-title">Почему «Барселона» решилась на продажу своего воспитанника</h4>
+            <span class="feed-card-time">2 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#7b241c"></div>
+            <h4 class="plot-side-title">Топ-5 альтернатив Торресу: кого рассматривали клубы</h4>
+            <span class="feed-card-time">3 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#0e6655"></div>
+            <h4 class="plot-side-title">Реакция болельщиков: соцсети взорвались мемами</h4>
+            <span class="feed-card-time">4 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#b9770e"></div>
+            <h4 class="plot-side-title">Финансовый фейр-плей: как клуб обошёл ограничения УЕФА</h4>
+            <span class="feed-card-time">5 часов назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#6c3483"></div>
+            <h4 class="plot-side-title">Тренер: «Торрес — именно тот игрок, который нам нужен»</h4>
+            <span class="feed-card-time">6 часов назад</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED ZONE 2 -->
+        <section class="feed">
+          <div class="teaser-inner">
+            <div class="feed-layout">
+              <aside class="feed-left">
+            <div class="feed-right-block">
+              <div class="feed-right-header">МОЯ ЛЕНТА</div>
+<ul class="feed-sport-list">
+                <li><time>00:45</time> <a href="#">«Не судья, а #### какой‑то». Рожков оскорбил Чистякова после удаления в матче с «Краснодаром»</a><span class="feed-fire">128</span></li>
+                <li><time>04:37</time> <a href="#">Пирло о контракте с Fonbet: «Придавать этому политическое значение значит приписывать мне убеждения»</a><span class="feed-fire">94</span></li>
+                <li><time>00:42</time> <a href="#">Аленичев: «В «Спартаке» осталось пять человек, с кем я работал. Это говорит о системности»</a><span class="feed-fire">56</span></li>
+                <li><time>23:15</time> <a href="#">Овечкин — о завершении карьеры: «Пока есть силы, буду играть. Но уже думаю, что дальше»</a><span class="feed-fire">210</span></li>
+                <li><time>22:00</time> <a href="#">Леброн Джеймс продлил контракт с «Лейкерс» ещё на два сезона. Сумма — $97 млн</a><span class="feed-fire">340</span></li>
+                <li><time>21:30</time> <a href="#">Медведев вышел в полуфинал Уимблдона, обыграв Алькараса в трёх сетах</a><span class="feed-fire">185</span></li>
+                <li><time>20:45</time> <a href="#">Гвардиола: «Холанд может стать лучшим бомбардиром в истории АПЛ. У него всё для этого есть»</a><span class="feed-fire">276</span></li>
+                <li><time>19:20</time> <a href="#">10-летняя россиянка станцевала с Шакирой на финале ЧМ-2026. Новое видео с репетиции</a><span class="feed-fire">490</span></li>
+              </ul>
+            </div>
+          </aside>
+              <main class="feed-main">
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Основатель «Тур де Франс» хотел видеть страдания гонщиков на изматывающих этапах</h3>
+                <p class="feed-card-desc">История главной велогонки лета.</p>
+                <span class="feed-card-time">5 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#2e4053"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Передаю титул фэнтези-чемпиона. Итоги ЧМ с 8634-го места</h3>
+                <p class="feed-card-desc">От победителя Катара-2022.</p>
+                <span class="feed-card-time">30 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#7b241c"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Худший матч в карьере Рафаэля Надаля</h3>
+                <p class="feed-card-desc">Третья серия.</p>
+                <span class="feed-card-time">55 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#6c3483"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Я больше месяца провел на ЧМ – вот 50 случайных фото с моего телефона</h3>
+                <p class="feed-card-desc">Просто листайте.</p>
+                <span class="feed-card-time">сегодня, 11:20</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">10-летняя Есения станцевала с Шакирой на финале ЧМ. Чувствует ритм с 8 месяцев</h3>
+                <p class="feed-card-desc">Уже давно сама звезда.</p>
+                <span class="feed-card-time">сегодня, 10:55</span>
+              </div>
+            </article>
+          </main>
+              <aside class="feed-right">
+            <div class="feed-right-block">
+              <div class="feed-right-header">СТАТИСТИКА</div>
+              <div class="feed-right-tabs">
+                <span class="feed-tab active">Таблица</span>
+                <span class="feed-tab">Бомбардиры</span>
+                <span class="feed-tab">Ассистенты</span>
+              </div>
+              <div class="feed-right-league">Россия. Премьер-лига</div>
+              <table class="feed-table">
+                <thead><tr><th></th><th>Команда</th><th>М</th><th>О</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Зенит</td><td>1</td><td>3</td></tr>
+                  <tr><td>2</td><td>Спартак</td><td>1</td><td>3</td></tr>
+                  <tr><td>3</td><td>Краснодар</td><td>1</td><td>3</td></tr>
+                  <tr><td>4</td><td>Динамо Мх</td><td>1</td><td>3</td></tr>
+                  <tr><td>5</td><td>ЦСКА</td><td>1</td><td>3</td></tr>
+                  <tr><td>6</td><td>Оренбург</td><td>1</td><td>3</td></tr>
+                  <tr><td>7</td><td>Ахмат</td><td>1</td><td>1</td></tr>
+                  <tr><td>8</td><td>Локомотив</td><td>1</td><td>1</td></tr>
+                  <tr><td>9</td><td>Динамо</td><td>1</td><td>1</td></tr>
+                  <tr><td>10</td><td>Кр. Советов</td><td>1</td><td>1</td></tr>
+                  <tr><td>11</td><td>Балтика</td><td>1</td><td>0</td></tr>
+                  <tr><td>12</td><td>Ростов</td><td>1</td><td>0</td></tr>
+                </tbody>
+              </table>
+              <a href="#" class="feed-table-link">Полная таблица</a>
+            </div>
+
+            <div class="feed-right-block">
+              <div class="feed-right-header">ОПРОС</div>
+              <p class="feed-poll-q">Какая золотая Испания сильнее: эта или 2008-2012-го?</p>
+              <div class="feed-poll-bar"><span style="width:28%">28%</span></div>
+              <div class="feed-poll-option">Эта, чемпионы-2026</div>
+              <div class="feed-poll-bar active"><span style="width:72%">72%</span></div>
+              <div class="feed-poll-option">Та, чемпионы-2010</div>
+              <span class="feed-poll-votes">20 947 голосов</span>
+            </div>
+          </aside>
+            </div>
+          </div>
+        </section>
+
+  <!-- RPL -->
+  <section class="plot">
+    <div class="teaser-inner">
+      <div class="teaser-top">
+        <h2 class="teaser-title">РПЛ</h2>
+      </div>
+      <div class="plot-layout">
+        <article class="plot-main">
+          <div class="plot-main-img" style="background:#1a5276"></div>
+          <h3 class="plot-main-title">Трансфер Феррана Торреса — самый обсуждаемый переход лета. Что стоит за сделкой</h3>
+          <p class="plot-main-desc">Ферран Торрес переходит в клуб за рекордные 85 миллионов. Разбираем детали контракта.</p>
+          <div class="plot-stats">
+            <span class="supertop-plus">+245</span>
+            <span class="supertop-comments">🔥 89</span>
+          </div>
+        </article>
+        <div class="plot-side">
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#2e4053"></div>
+            <h4 class="plot-side-title">Почему «Барселона» решилась на продажу своего воспитанника</h4>
+            <span class="feed-card-time">2 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#7b241c"></div>
+            <h4 class="plot-side-title">Топ-5 альтернатив Торресу: кого рассматривали клубы</h4>
+            <span class="feed-card-time">3 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#0e6655"></div>
+            <h4 class="plot-side-title">Реакция болельщиков: соцсети взорвались мемами</h4>
+            <span class="feed-card-time">4 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#b9770e"></div>
+            <h4 class="plot-side-title">Финансовый фейр-плей: как клуб обошёл ограничения УЕФА</h4>
+            <span class="feed-card-time">5 часов назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#6c3483"></div>
+            <h4 class="plot-side-title">Тренер: «Торрес — именно тот игрок, который нам нужен»</h4>
+            <span class="feed-card-time">6 часов назад</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED ZONE 2 -->
+        <section class="feed">
+          <div class="teaser-inner">
+            <div class="feed-layout">
+              <aside class="feed-left">
+            <div class="feed-right-block">
+              <div class="feed-right-header">ФУТБОЛ</div>
+<ul class="feed-sport-list">
+                <li><time>00:45</time> <span class="feed-tag">Футбол</span> <a href="#">«Не судья, а #### какой‑то». Рожков оскорбил Чистякова после удаления в матче с «Краснодаром»</a><span class="feed-fire">128</span></li>
+                <li><time>04:37</time> <span class="feed-tag">Футбол</span> <a href="#">Пирло о контракте с Fonbet: «Придавать этому политическое значение значит приписывать мне убеждения»</a><span class="feed-fire">94</span></li>
+                <li><time>00:42</time> <span class="feed-tag">Футбол</span> <a href="#">Аленичев: «В «Спартаке» осталось пять человек, с кем я работал. Это говорит о системности»</a><span class="feed-fire">56</span></li>
+                <li><time>23:15</time> <span class="feed-tag">Хоккей</span> <a href="#">Овечкин — о завершении карьеры: «Пока есть силы, буду играть. Но уже думаю, что дальше»</a><span class="feed-fire">210</span></li>
+                <li><time>22:00</time> <span class="feed-tag">Баскетбол</span> <a href="#">Леброн Джеймс продлил контракт с «Лейкерс» ещё на два сезона. Сумма — $97 млн</a><span class="feed-fire">340</span></li>
+                <li><time>21:30</time> <span class="feed-tag">Теннис</span> <a href="#">Медведев вышел в полуфинал Уимблдона, обыграв Алькараса в трёх сетах</a><span class="feed-fire">185</span></li>
+                <li><time>20:45</time> <span class="feed-tag">Футбол</span> <a href="#">Гвардиола: «Холанд может стать лучшим бомбардиром в истории АПЛ. У него всё для этого есть»</a><span class="feed-fire">276</span></li>
+                <li><time>19:20</time> <span class="feed-tag">Медиафутбол</span> <a href="#">10-летняя россиянка станцевала с Шакирой на финале ЧМ-2026. Новое видео с репетиции</a><span class="feed-fire">490</span></li>
+              </ul>
+            </div>
+          </aside>
+              <main class="feed-main">
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Основатель «Тур де Франс» хотел видеть страдания гонщиков на изматывающих этапах</h3>
+                <p class="feed-card-desc">История главной велогонки лета.</p>
+                <span class="feed-card-time">5 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#2e4053"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Передаю титул фэнтези-чемпиона. Итоги ЧМ с 8634-го места</h3>
+                <p class="feed-card-desc">От победителя Катара-2022.</p>
+                <span class="feed-card-time">30 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#7b241c"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Худший матч в карьере Рафаэля Надаля</h3>
+                <p class="feed-card-desc">Третья серия.</p>
+                <span class="feed-card-time">55 минут назад</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#6c3483"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">Я больше месяца провел на ЧМ – вот 50 случайных фото с моего телефона</h3>
+                <p class="feed-card-desc">Просто листайте.</p>
+                <span class="feed-card-time">сегодня, 11:20</span>
+              </div>
+            </article>
+            <article class="feed-card">
+              <div class="feed-card-img" style="background:#1a5276"></div>
+              <div class="feed-card-body">
+                <h3 class="feed-card-title">10-летняя Есения станцевала с Шакирой на финале ЧМ. Чувствует ритм с 8 месяцев</h3>
+                <p class="feed-card-desc">Уже давно сама звезда.</p>
+                <span class="feed-card-time">сегодня, 10:55</span>
+              </div>
+            </article>
+          </main>
+              <aside class="feed-right">
+            <div class="feed-right-block">
+              <img src="images/ad-banner-1.png" alt="" style="width:100%;display:block;">
+            </div>
+            <div class="feed-right-block">
+              <img src="images/ad-banner-2.png" alt="" style="width:100%;display:block;">
+            </div>
+          </aside>
+
+  <!-- KHL -->
+  <section class="plot">
+    <div class="teaser-inner">
+      <div class="teaser-top">
+        <h2 class="teaser-title">КХЛ</h2>
+      </div>
+      <div class="plot-layout">
+        <article class="plot-main">
+          <div class="plot-main-img" style="background:#c8102e"></div>
+          <h3 class="plot-main-title">ЦСКА — СКА: главное армейское дерби сезона. Кто сильнее в новом году?</h3>
+          <p class="plot-main-desc">Первое противостояние грандов КХЛ после олимпийской паузы. Ждём аншлаг и жёсткий хоккей.</p>
+          <div class="plot-stats">
+            <span class="supertop-plus">+180</span>
+            <span class="supertop-comments">🔥 64</span>
+          </div>
+        </article>
+        <div class="plot-side">
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#003777"></div>
+            <h4 class="plot-side-title">Александр Овечкин вернулся в «Динамо»: контракт на один сезон</h4>
+            <span class="feed-card-time">3 часа назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#c8102e"></div>
+            <h4 class="plot-side-title">КХЛ объявила календарь плей-офф: старт 1 марта</h4>
+            <span class="feed-card-time">5 часов назад</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#006b3f"></div>
+            <h4 class="plot-side-title">Лучшие вратари первой половины сезона КХЛ: рейтинг</h4>
+            <span class="feed-card-time">вчера, 18:30</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#daa520"></div>
+            <h4 class="plot-side-title">Трансферные слухи: кто покинет «Авангард» до дедлайна</h4>
+            <span class="feed-card-time">вчера, 15:00</span>
+          </article>
+          <article class="plot-side-card">
+            <div class="plot-side-img" style="background:#6c3483"></div>
+            <h4 class="plot-side-title">Молодые звёзды КХЛ: топ-10 проспектов этого сезона</h4>
+            <span class="feed-card-time">2 дня назад</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Collapse/expand sport sections
+    document.querySelectorAll('.teaser-sport-header').forEach(header => {
+      const cards = header.nextElementSibling;
+      const arrow = header.querySelector('img:last-child');
+      const isCollapsed = cards.style.display === 'none';
+      if (isCollapsed) {
+        cards.style.display = 'none';
+        arrow.classList.remove('open');
+      }
+      header.addEventListener('click', () => {
+        const isOpen = cards.style.display !== 'none';
+        cards.style.display = isOpen ? 'none' : '';
+        arrow.classList.toggle('open', !isOpen);
+      });
+    });
+  </script>
+</body>
+</html>
