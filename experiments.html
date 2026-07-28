@@ -2,257 +2,200 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Пресса сегодня — Sports.ru</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'TT Neoris', 'Inter', sans-serif; background: #fafafa; color: #161616; line-height: 1.5; }
-
-    /* ========== HEADER ========== */
-    .header { background: #161616; color: #fff; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-    .header-logo { font-family: 'TT Sports Display', serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; cursor: pointer; }
-    .header-date { font-size: 14px; color: #9b9b9b; }
-
-    /* ========== MASTHEAD ========== */
-    .masthead { max-width: 1200px; margin: 32px auto 0; padding: 0 24px; }
-    .masthead-top { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid #161616; padding-bottom: 16px; margin-bottom: 24px; }
-    .masthead-title { font-family: 'TT Sports Display', serif; font-size: 48px; font-weight: 700; letter-spacing: -1px; }
-    .masthead-subtitle { font-size: 16px; color: #505050; font-weight: 500; }
-    .masthead-meta { font-size: 13px; color: #7f7f7f; text-align: right; }
-
-    /* ========== LAYOUT — CSS Grid newspaper ========== */
-    .paper { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
-    .paper-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
-
-    /* ========== STORY CARDS ========== */
-    .story { break-inside: avoid; margin-bottom: 24px; }
-    .story-hero { grid-column: 1 / -1; display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-    .story-hero .story-img { aspect-ratio: 16/9; }
-    .story-hero .story-title { font-size: 36px; }
-    .story-hero .story-desc { font-size: 16px; }
-
-    .story-featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .story-featured .story-img { aspect-ratio: 4/3; }
-
-    .story-img { background: #e0e0e0; overflow: hidden; margin-bottom: 12px; }
-    .story-img img { width: 100%; height: 100%; object-fit: cover; }
-    .story-kicker { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #ff4848; letter-spacing: 1px; margin-bottom: 4px; }
-    .story-title { font-family: 'TT Sports Display', serif; font-size: 22px; font-weight: 700; line-height: 1.15; margin-bottom: 6px; cursor: pointer; }
-    .story-title:hover { color: #00a876; }
-    .story-desc { font-size: 14px; color: #505050; line-height: 1.4; margin-bottom: 8px; }
-    .story-meta { font-size: 12px; color: #9b9b9b; display: flex; gap: 16px; }
-
-    /* ========== SECTION HEADER ========== */
-    .section-header { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; margin: 32px 0 16px; padding-top: 24px; border-top: 1px solid #e0e0e0; }
-    .section-header h2 { font-family: 'TT Sports Display', serif; font-size: 28px; font-weight: 700; white-space: nowrap; }
-    .section-line { flex: 1; height: 1px; background: #e0e0e0; }
-
-    /* ========== SIDEBAR NEWS ========== */
-    .news-list { list-style: none; }
-    .news-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
-    .news-list li:last-child { border: none; }
-    .news-list .news-time { font-size: 11px; color: #9b9b9b; margin-right: 8px; }
-    .news-list .news-tag { font-size: 10px; font-weight: 600; text-transform: uppercase; color: #00a876; margin-right: 6px; }
-    .news-list a { color: #161616; text-decoration: none; }
-    .news-list a:hover { color: #00a876; }
-
-    /* ========== EDITOR'S PICK ========== */
-    .editors-pick { grid-column: 1 / -1; background: #f4f4f4; padding: 24px; margin: 24px 0; border-left: 4px solid #ff4848; }
-    .editors-pick h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #ff4848; margin-bottom: 16px; }
-
-    /* ========== OPINION ========== */
-    .opinion-card { display: flex; gap: 12px; margin-bottom: 16px; }
-    .opinion-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 14px; }
-    .opinion-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-    .opinion-title { font-size: 14px; color: #161616; cursor: pointer; }
-    .opinion-title:hover { color: #00a876; }
-
-    /* ========== BOTTOM BAR ========== */
-    .bottom-bar { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 32px; padding-top: 32px; border-top: 2px solid #161616; }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 860px) {
-      .paper-grid { grid-template-columns: 1fr; }
-      .story-hero, .story-featured { grid-column: 1; grid-template-columns: 1fr; }
-      .section-header, .editors-pick, .bottom-bar { grid-column: 1; }
-      .bottom-bar { grid-template-columns: 1fr; }
-      .masthead-title { font-size: 32px; }
-      .story-hero .story-title { font-size: 24px; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pressa.css">
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER — from main design -->
   <header class="header">
-    <div class="header-logo">СПОРТС</div>
-    <div class="header-date">Понедельник, 28 июля 2026 • Пресса сегодня</div>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="header-nav-toggle">
+          <img src="images/icons/menu.svg" alt="" width="24" height="24">
+        </button>
+        <a href="/" class="header-logo">
+          <img src="images/logo/Type=Cyrilic Full.svg" alt="Sports.ru" width="102" height="26">
+        </a>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Трибуна</a></li>
+            <li><a href="#">Ставки</a></li>
+            <li><a href="#">Футбол</a></li>
+            <li><a href="#">Фигурка</a></li>
+            <li><a href="#">Хоккей</a></li>
+            <li><a href="#">Теннис</a></li>
+            <li><a href="#">Бокс</a></li>
+            <li><a href="#">Авто</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button class="header-btn"><img src="images/icons/search.svg" alt="Поиск" width="24" height="24"></button>
+        <button class="header-btn"><img src="images/icons/notification.svg" alt="Уведомления" width="24" height="24"></button>
+        <button class="header-btn"><img src="images/icons/profile.svg" alt="Профиль" width="24" height="24"></button>
+      </div>
+    </div>
   </header>
 
   <!-- MASTHEAD -->
-  <div class="masthead">
-    <div class="masthead-top">
-      <div>
-        <div class="masthead-subtitle">Спортивная газета • Выбор редакции</div>
-        <h1 class="masthead-title">Пресса сегодня</h1>
+  <div class="pressa-masthead">
+    <div class="pressa-masthead-inner">
+      <div class="pressa-masthead-left">
+        <div class="pressa-masthead-label">Ежедневная спортивная газета</div>
+        <h1 class="pressa-masthead-title">Пресса сегодня</h1>
       </div>
-      <div class="masthead-meta">
-        № 214 • Пн 28.07.2026<br>
-        Сегодня в номере: финал ЧМ,<br>трансферы РПЛ, олимпийский зачёт
+      <div class="pressa-masthead-right">
+        <div class="pressa-masthead-date">Понедельник, 28 июля 2026</div>
+        <div class="pressa-masthead-issue">№ 214</div>
       </div>
     </div>
   </div>
 
-  <!-- PAPER GRID -->
-  <div class="paper">
-    <div class="paper-grid">
+  <div class="pressa-grid">
 
-      <!-- ===== HERO STORY ===== -->
-      <article class="story story-hero">
-        <div class="story-main">
-          <div class="story-img" style="background: #1a3a5c;"></div>
-          <div class="story-kicker">Главное</div>
-          <h2 class="story-title">Испания — чемпион мира. Финал, который войдёт в историю</h2>
-          <p class="story-desc">Голы Ямала и Гави приносят Испании второе золото за 16 лет. Аргентина прощается с Месси на пике.</p>
-          <div class="story-meta">
-            <span>+480</span><span>🔥 210</span><span>12 минут чтения</span>
-          </div>
-        </div>
-        <div class="story-side">
-          <div class="story-img" style="background: #2e4053;"></div>
-          <h3 class="story-title" style="font-size:18px">Де ла Фуэнте — великий. Возможно, выше Арагонеса и Дель Боске</h3>
-          <div class="story-meta"><span>+72</span><span>🔥 70</span></div>
-          <div style="margin-top:16px">
-            <div class="story-img" style="background: #4a235a; height: 100px;"></div>
-            <h3 class="story-title" style="font-size:18px">50 выводов после чемпионата мира. Сразу к делу</h3>
-            <div class="story-meta"><span>+93</span><span>🔥 212</span></div>
+    <!-- ===== HERO — финал ЧМ ===== -->
+    <section class="pressa-hero">
+      <article class="pressa-hero-main">
+        <div class="pressa-hero-img" style="background:#1a3a5c"></div>
+        <div class="pressa-hero-content">
+          <span class="pressa-kicker pressa-kicker-red">Главное</span>
+          <h2 class="pressa-hero-title">Испания — чемпион мира. Финал, который войдёт в историю</h2>
+          <p class="pressa-hero-desc">Голы Ямала и Гави приносят Испании второе золото за 16 лет. Аргентина прощается с Месси на пике.</p>
+          <div class="pressa-meta">
+            <span class="supertop-plus">+480</span>
+            <span class="supertop-comments">🔥 210</span>
+            <span>12 минут чтения</span>
           </div>
         </div>
       </article>
-
-      <!-- ===== TRANSFER WINDOW — SECTION ===== -->
-      <div class="section-header">
-        <h2>Трансферное окно</h2>
-        <div class="section-line"></div>
+      <div class="pressa-hero-side">
+        <article class="pressa-hero-side-card">
+          <div class="pressa-hero-side-img" style="background:#2e4053"></div>
+          <h3>Де ла Фуэнте — великий. Возможно, выше Арагонеса и Дель Боске</h3>
+          <div class="pressa-meta"><span class="supertop-plus">+72</span><span class="supertop-comments">🔥 70</span></div>
+        </article>
+        <article class="pressa-hero-side-card">
+          <div class="pressa-hero-side-img" style="background:#4a235a"></div>
+          <h3>50 выводов после чемпионата мира. Сразу к делу</h3>
+          <div class="pressa-meta"><span class="supertop-plus">+93</span><span class="supertop-comments">🔥 212</span></div>
+        </article>
       </div>
+    </section>
 
-      <article class="story story-featured">
-        <div>
-          <div class="story-img" style="background: #7b241c;"></div>
-        </div>
-        <div>
-          <div class="story-kicker">Инсайд</div>
-          <h3 class="story-title">Куда уходит Винисиус? «Арсенал» готовит рекордный трансфер, «Реал» молчит</h3>
-          <p class="story-desc">Бразилец может покинуть Мадрид этим летом. Английский клуб даёт €180 млн и полную свободу.</p>
-          <div class="story-meta"><span>+340</span><span>🔥 156</span></div>
+    <!-- ===== SECTION: Трансферное окно ===== -->
+    <div class="pressa-section-header">
+      <h2 class="pressa-section-title">Трансферное окно</h2>
+      <div class="pressa-section-line"></div>
+    </div>
+
+    <div class="pressa-row-2-1">
+      <article class="pressa-card pressa-card-horiz">
+        <div class="pressa-card-img" style="background:#7b241c"></div>
+        <div class="pressa-card-body">
+          <span class="pressa-kicker">Инсайд</span>
+          <h3>Куда уходит Винисиус? «Арсенал» готовит рекордный трансфер, «Реал» молчит</h3>
+          <p class="pressa-card-desc">Бразилец может покинуть Мадрид этим летом. Английский клуб даёт €180 млн и полную свободу.</p>
+          <div class="pressa-meta"><span class="supertop-plus">+340</span><span class="supertop-comments">🔥 156</span></div>
         </div>
       </article>
-
-      <article class="story">
-        <div class="story-img" style="background: #1a5276; height: 140px;"></div>
-        <div class="story-kicker">РПЛ</div>
-        <h3 class="story-title">«Спартак» покупает защитника «Зенита»: такого не было 15 лет</h3>
-        <div class="story-meta"><span>+120</span><span>🔥 88</span></div>
+      <article class="pressa-card">
+        <div class="pressa-card-img" style="background:#1a5276"></div>
+        <span class="pressa-kicker">РПЛ</span>
+        <h3>«Спартак» покупает защитника «Зенита»: такого не было 15 лет</h3>
+        <div class="pressa-meta"><span class="supertop-plus">+120</span><span class="supertop-comments">🔥 88</span></div>
       </article>
+    </div>
 
-      <!-- ===== OPINION — SECTION ===== -->
-      <div class="section-header">
-        <h2>Мнения</h2>
-        <div class="section-line"></div>
+    <!-- ===== SECTION: Мнения ===== -->
+    <div class="pressa-section-header">
+      <h2 class="pressa-section-title">Мнения</h2>
+      <div class="pressa-section-line"></div>
+    </div>
+
+    <div class="pressa-row-3">
+      <article class="pressa-card pressa-card-horiz">
+        <div class="pressa-avatar" style="background:#ff4848">Д</div>
+        <div>
+          <div class="pressa-author">Юрий Дудь</div>
+          <h3 style="font-size:16px">Почему я больше не смотрю футбол. И не жалею</h3>
+        </div>
+      </article>
+      <article class="pressa-card pressa-card-horiz">
+        <div class="pressa-avatar" style="background:#00a876">В</div>
+        <div>
+          <div class="pressa-author">Вадим Лукомский</div>
+          <h3 style="font-size:16px">Почему Месси потерялся в финале. Тактический разбор</h3>
+        </div>
+      </article>
+      <article class="pressa-card pressa-card-horiz">
+        <div class="pressa-avatar" style="background:#7781ff">Н</div>
+        <div>
+          <div class="pressa-author">Никита Курбатов</div>
+          <h3 style="font-size:16px">Пирло, Fonbet и ханжество европейского футбола</h3>
+        </div>
+      </article>
+    </div>
+
+    <!-- ===== EDITOR'S PICK ===== -->
+    <div class="pressa-pick">
+      <h2 class="pressa-pick-title">★ Выбор редакции ★</h2>
+      <div class="pressa-row-3">
+        <article class="pressa-card">
+          <div class="pressa-card-img" style="background:#1a5276"></div>
+          <h3 style="font-size:18px">«Если не заниматься спортом, на Землю можно вернуться овощем». Космонавт Рязанский</h3>
+          <div class="pressa-meta"><span class="supertop-plus">+28</span><span class="supertop-comments">🔥 13</span></div>
+        </article>
+        <article class="pressa-card">
+          <div class="pressa-card-img" style="background:#7b241c"></div>
+          <h3 style="font-size:18px">«Бостон» сбагрил MVP финала. Есть ли тут рациональное объяснение?</h3>
+          <div class="pressa-meta"><span class="supertop-plus">+47</span><span class="supertop-comments">🔥 16</span></div>
+        </article>
+        <article class="pressa-card">
+          <div class="pressa-card-img" style="background:#2e4053"></div>
+          <h3 style="font-size:18px">153 кило томатов — двум чемпионам мира. Вручали всем посёлком</h3>
+          <div class="pressa-meta"><span class="supertop-plus">+92</span><span class="supertop-comments">🔥 46</span></div>
+        </article>
       </div>
+    </div>
 
-      <article class="story">
-        <div class="opinion-card">
-          <div class="opinion-avatar" style="background:#ff4848">Д</div>
-          <div>
-            <div class="opinion-name">Юрий Дудь</div>
-            <div class="opinion-title">Почему я больше не смотрю футбол. И не жалею</div>
-          </div>
-        </div>
-        <div class="opinion-card">
-          <div class="opinion-avatar" style="background:#00a876">В</div>
-          <div>
-            <div class="opinion-name">Вадим Лукомский</div>
-            <div class="opinion-title">Почему Месси потерялся в финале. Тактический разбор</div>
-          </div>
-        </div>
-        <div class="opinion-card">
-          <div class="opinion-avatar" style="background:#7781ff">Н</div>
-          <div>
-            <div class="opinion-name">Никита Курбатов</div>
-            <div class="opinion-title">Пирло, Fonbet и ханжество европейского футбола</div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ===== LATEST NEWS — SIDEBAR ===== -->
-      <div class="story">
-        <div class="section-header" style="margin:0 0 16px;padding:0;border:0">
-          <h2 style="font-size:20px">Лента</h2>
-          <div class="section-line"></div>
-        </div>
-        <ul class="news-list">
-          <li><span class="news-time">14:22</span><span class="news-tag">Футбол</span><a href="#">Кахигао: «Если РФС, судьи и ВАР не хотят нас уважать, это их выбор»</a></li>
-          <li><span class="news-time">14:07</span><span class="news-tag">Хоккей</span><a href="#">Овечкин о комментаторах: «Уткин. Из нынешних — Черданцев»</a></li>
-          <li><span class="news-time">13:48</span><span class="news-tag">Беттинг</span><a href="#">«Фонбет» о критике Пирло: «Политика используется в спорте»</a></li>
-          <li><span class="news-time">13:09</span><span class="news-tag">Футбол</span><a href="#">Посол России — Пирло: «Вы подвергаетесь отмене истеблишментом»</a></li>
-          <li><span class="news-time">12:56</span><span class="news-tag">Футбол</span><a href="#">Карпина о жёнах футболистов: «Говорить, что они дуры — смешно»</a></li>
-          <li><span class="news-time">12:24</span><span class="news-tag">Футбол</span><a href="#">Неймар пропустил тренировку «Сантоса» после конфликта</a></li>
+    <!-- ===== BOTTOM: три колонки по видам спорта ===== -->
+    <div class="pressa-bottom">
+      <div>
+        <h3 class="pressa-bottom-title">Футбол</h3>
+        <ul class="pressa-news-list">
+          <li><time>12:00</time><a href="#">«Локо» продлил Карпукаса до 2030 года</a></li>
+          <li><time>11:30</time><a href="#">Мбаппе на обложке FC 27: закулисное видео</a></li>
+          <li><time>10:45</time><a href="#">Мостовой о трансфере Игдисамова в ЦСКА</a></li>
         </ul>
       </div>
-
-      <!-- ===== EDITOR'S PICK ===== -->
-      <div class="editors-pick">
-        <h2>★ Выбор редакции ★</h2>
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-          <div>
-            <div class="story-img" style="aspect-ratio:4/3; background:#1a5276;"></div>
-            <h3 class="story-title" style="font-size:18px">«Если не заниматься спортом, на Землю можно вернуться овощем». Космонавт Рязанский</h3>
-          </div>
-          <div>
-            <div class="story-img" style="aspect-ratio:4/3; background:#7b241c;"></div>
-            <h3 class="story-title" style="font-size:18px">«Бостон» сбагрил MVP финала. Есть ли тут рациональное объяснение?</h3>
-          </div>
-          <div>
-            <div class="story-img" style="aspect-ratio:4/3; background:#2e4053;"></div>
-            <h3 class="story-title" style="font-size:18px">153 кило томатов — двум чемпионам мира. Вручали всем посёлком</h3>
-          </div>
-        </div>
+      <div>
+        <h3 class="pressa-bottom-title">Хоккей</h3>
+        <ul class="pressa-news-list">
+          <li><time>11:20</time><a href="#">Назаров: «Наши топ-клубы — лучшие в мире грузовики»</a></li>
+          <li><time>10:30</time><a href="#">Панарин о депрессии: «Гордыня привела в момент»</a></li>
+          <li><time>09:15</time><a href="#">Тиббеттс обвинил Айкела: «Ты и твой папаша — подонки»</a></li>
+        </ul>
       </div>
-
-      <!-- ===== BOTTOM BAR — FINAL SECTION ===== -->
-      <div class="bottom-bar">
-        <div>
-          <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#505050">Футбол</h3>
-          <ul class="news-list">
-            <li><span class="news-time">12:00</span><a href="#">«Локо» продлил Карпукаса до 2030 года</a></li>
-            <li><span class="news-time">11:30</span><a href="#">Мбаппе на обложке FC 27: закулисное видео</a></li>
-            <li><span class="news-time">10:45</span><a href="#">Мостовой о трансфере Игдисамова в ЦСКА</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#505050">Хоккей</h3>
-          <ul class="news-list">
-            <li><span class="news-time">11:20</span><a href="#">Назаров: «Наши топ-клубы — лучшие в мире грузовики»</a></li>
-            <li><span class="news-time">10:30</span><a href="#">Панарин о депрессии: «Гордыня привела в момент, когда понял»</a></li>
-            <li><span class="news-time">09:15</span><a href="#">Тиббеттс обвинил Айкела: «Ты и твой папаша — подонки»</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#505050">Баскетбол</h3>
-          <ul class="news-list">
-            <li><span class="news-time">10:59</span><a href="#">Дрэймонд Грин об обмене Лу Дорта: «Большая потеря»</a></li>
-            <li><span class="news-time">09:40</span><a href="#">Бузелис: «Бросал слишком много трёшек»</a></li>
-            <li><span class="news-time">08:50</span><a href="#">Уиндхорст: «Не могу понять интереса к контракту»</a></li>
-          </ul>
-        </div>
+      <div>
+        <h3 class="pressa-bottom-title">Баскетбол</h3>
+        <ul class="pressa-news-list">
+          <li><time>10:59</time><a href="#">Дрэймонд Грин об обмене Лу Дорта: «Большая потеря»</a></li>
+          <li><time>09:40</time><a href="#">Бузелис: «Бросал слишком много трёшек»</a></li>
+          <li><time>08:50</time><a href="#">Уиндхорст: «Не могу понять интереса к контракту»</a></li>
+        </ul>
       </div>
+    </div>
 
-    </div><!-- /paper-grid -->
-  </div><!-- /paper -->
+  </div><!-- /pressa-grid -->
 
 </body>
 </html>

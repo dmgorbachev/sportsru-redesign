@@ -1,0 +1,187 @@
+/* ===== Пресса сегодня — newspaper editorial layout ===== */
+
+/* ----- Masthead ----- */
+.pressa-masthead {
+  max-width: 1480px; margin: 24px auto 0; padding: 0 24px;
+}
+.pressa-masthead-inner {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 3px solid var(--ui-content, #222);
+  padding-bottom: 16px;
+}
+.pressa-masthead-label {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--ui-secondary, #7F7F7F);
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px;
+}
+.pressa-masthead-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 48px; font-weight: 700;
+  color: var(--ui-content, #222);
+  letter-spacing: -1px; line-height: 1;
+}
+.pressa-masthead-right { text-align: right; }
+.pressa-masthead-date {
+  font-size: 14px; color: var(--ui-content, #222); font-weight: 500;
+}
+.pressa-masthead-issue {
+  font-size: 13px; color: var(--ui-tertiary, #9B9B9B);
+}
+
+/* ----- Grid ----- */
+.pressa-grid {
+  max-width: 1480px; margin: 0 auto; padding: 24px 24px 64px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+
+/* ----- Hero ----- */
+.pressa-hero {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 20px;
+}
+.pressa-hero-main { display: flex; flex-direction: column; gap: 12px; }
+.pressa-hero-img {
+  aspect-ratio: 16/9; background: var(--ui-disabled, #D8D8D8);
+  overflow: hidden;
+}
+.pressa-hero-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 36px; font-weight: 700; color: var(--ui-content, #222);
+  line-height: 1.1;
+}
+.pressa-hero-desc {
+  font-size: 16px; color: var(--ui-tertiary, #9B9B9B); line-height: 1.4;
+}
+.pressa-hero-side { display: flex; flex-direction: column; gap: 16px; }
+.pressa-hero-side-card { display: flex; flex-direction: column; gap: 8px; cursor: pointer; }
+.pressa-hero-side-card:hover h3 { color: var(--ui-primary, #00A876); }
+.pressa-hero-side-img {
+  aspect-ratio: 16/9; background: var(--ui-disabled, #D8D8D8);
+  overflow: hidden;
+}
+.pressa-hero-side-card h3 {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--ui-content, #222);
+  line-height: 1.2; transition: color 0.2s;
+}
+
+/* ----- Kicker (category tag) ----- */
+.pressa-kicker {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--ui-primary, #00A876);
+}
+.pressa-kicker-red { color: var(--ui-danger, #FF4848); }
+
+/* ----- Meta line ----- */
+.pressa-meta {
+  display: flex; gap: 16px; font-size: 13px;
+  color: var(--ui-tertiary, #9B9B9B); align-items: center;
+}
+
+/* ----- Section header ----- */
+.pressa-section-header {
+  display: flex; align-items: center; gap: 12px;
+}
+.pressa-section-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 28px; font-weight: 700; color: var(--ui-content, #222);
+  white-space: nowrap;
+}
+.pressa-section-line {
+  flex: 1; height: 2px; background: var(--ui-content, #222);
+}
+
+/* ----- Cards ----- */
+.pressa-card { cursor: pointer; display: flex; flex-direction: column; gap: 10px; }
+.pressa-card:hover h3 { color: var(--ui-primary, #00A876); }
+.pressa-card-img {
+  aspect-ratio: 16/10; background: var(--ui-disabled, #D8D8D8);
+  overflow: hidden;
+}
+.pressa-card h3 {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--ui-content, #222);
+  line-height: 1.2; transition: color 0.2s;
+}
+.pressa-card-desc {
+  font-size: 14px; color: var(--ui-tertiary, #9B9B9B); line-height: 1.4;
+}
+.pressa-card-body { display: flex; flex-direction: column; gap: 8px; }
+
+/* Horizontal card variant */
+.pressa-card-horiz { display: flex; flex-direction: row; gap: 16px; align-items: flex-start; }
+.pressa-card-horiz .pressa-card-img {
+  width: 200px; flex-shrink: 0; height: auto;
+}
+
+/* ----- Row layouts ----- */
+.pressa-row-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.pressa-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* ----- Avatar for opinions ----- */
+.pressa-avatar {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 18px; font-weight: 700;
+}
+.pressa-author {
+  font-size: 13px; font-weight: 600; color: var(--ui-content, #222);
+  margin-bottom: 4px;
+}
+
+/* ----- Editor's Pick ----- */
+.pressa-pick {
+  background: var(--ui-fill, #F4F4F4);
+  padding: 24px;
+  border-left: 4px solid var(--ui-danger, #FF4848);
+}
+.pressa-pick-title {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--ui-danger, #FF4848);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* ----- Bottom bar ----- */
+.pressa-bottom {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  padding-top: 32px; border-top: 2px solid var(--ui-content, #222);
+}
+.pressa-bottom-title {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--ui-tertiary, #9B9B9B);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* ----- News list ----- */
+.pressa-news-list { list-style: none; }
+.pressa-news-list li {
+  padding: 8px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
+  font-size: 14px; line-height: 1.4;
+}
+.pressa-news-list li:last-child { border-bottom: none; }
+.pressa-news-list time {
+  font-size: 11px; color: var(--ui-tertiary, #9B9B9B); margin-right: 6px;
+}
+.pressa-news-list a {
+  color: var(--ui-content, #222); text-decoration: none;
+}
+.pressa-news-list a:hover { color: var(--ui-primary, #00A876); }
+
+/* ----- Responsive ----- */
+@media (max-width: 860px) {
+  .pressa-masthead { padding: 0 16px; }
+  .pressa-masthead-title { font-size: 28px; }
+  .pressa-grid { padding: 16px; gap: 20px; }
+  .pressa-hero, .pressa-row-2-1, .pressa-row-3, .pressa-bottom {
+    grid-template-columns: 1fr;
+  }
+  .pressa-hero-title { font-size: 24px; }
+  .pressa-section-title { font-size: 22px; }
+  .pressa-card-horiz { flex-direction: column; }
+  .pressa-card-horiz .pressa-card-img { width: 100%; aspect-ratio: 16/9; }
+  .pressa-pick { padding: 16px; }
+}
