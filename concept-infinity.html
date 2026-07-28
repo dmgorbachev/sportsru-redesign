@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 3: Infinity</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    body { background: #0a0a0a; color: #fff; font-family: 'TT Neoris', sans-serif; margin: 0; }
+
+    /* Header */
+    .hdr { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.9); backdrop-filter: blur(20px); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; }
+    .hdr-logo { font-family: 'TT Sports Display', sans-serif; font-size: 22px; font-weight: 700; }
+    .hdr-time { font-size: 13px; color: #505050; }
+    .hdr-live { display: flex; align-items: center; gap: 8px; }
+    .hdr-dot { width: 6px; height: 6px; background: #ff4848; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    /* Sections */
+    .sect { padding: 64px 32px; }
+    .sect-dark { background: #0d0d0d; }
+    .sect-accent { background: #00a876; color: #0a0a0a; }
+    .sect-red { background: #ff4848; color: #fff; }
+    .sect-blue { background: #1a1a3e; }
+
+    .sect-inner { max-width: 1000px; margin: 0 auto; }
+
+    /* Hero section */
+    .hero { min-height: 80vh; display: flex; align-items: center; }
+    .hero h2 { font-family: 'TT Sports Display', sans-serif; font-size: 96px; font-weight: 700; line-height: 0.9; letter-spacing: -3px; margin-bottom: 24px; }
+    .hero p { font-size: 20px; color: #7f7f7f; max-width: 600px; line-height: 1.5; }
+
+    /* Live ticker */
+    .ticker { display: flex; gap: 32px; padding: 24px 0; border-bottom: 1px solid #1a1a1a; overflow-x: auto; }
+    .ticker-game { flex-shrink: 0; }
+    .ticker-teams { font-weight: 700; font-size: 18px; }
+    .ticker-score { font-size: 14px; color: #00a876; }
+    .ticker-time { font-size: 12px; color: #ff4848; }
+
+    /* Cards — horizontal scroll */
+    .scroll-row { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; }
+    .scroll-card { flex-shrink: 0; width: 340px; cursor: pointer; }
+    .scroll-card:hover h3 { color: #00a876; }
+    .scroll-img { aspect-ratio: 4/3; background: #1a1a1a; margin-bottom: 12px; }
+    .scroll-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #00a876; margin-bottom: 6px; }
+    .scroll-card h3 { font-family: 'TT Sports Display', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2; transition: color 0.2s; }
+    .scroll-meta { font-size: 13px; color: #505050; margin-top: 6px; }
+
+    /* Big quote */
+    .quote { font-family: 'TT Sports Display', sans-serif; font-size: 48px; font-weight: 700; line-height: 1.1; max-width: 800px; }
+    .quote-author { font-size: 16px; color: rgba(0,0,0,0.6); margin-top: 16px; }
+
+    /* Grid highlights */
+    .hgrid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; }
+    .hgrid-card { cursor: pointer; }
+    .hgrid-card:hover h4 { color: #ff4848; }
+    .hgrid-img { aspect-ratio: 16/9; background: #1a1a1a; margin-bottom: 12px; }
+    .hgrid-card h4 { font-family: 'TT Sports Display', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2; transition: color 0.2s; }
+    .hgrid-meta { font-size: 13px; color: #505050; margin-top: 4px; }
+
+    /* Section titles */
+    .sect-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #505050; margin-bottom: 24px; }
+    .sect-accent .sect-label, .sect-red .sect-label { color: rgba(0,0,0,0.4); }
+
+    @media (max-width: 860px) {
+      .hero h2 { font-size: 48px; }
+      .hgrid { grid-template-columns: 1fr; }
+      .sect { padding: 32px 16px; }
+      .quote { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="hdr-logo">СПОРТС</div>
+    <div class="hdr-live"><span class="hdr-dot"></span> Зенит — Спартак 2:1, 67'</div>
+    <div class="hdr-time">Пн 28 июля • 16:42 МСК</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="sect hero">
+    <div class="sect-inner">
+      <h2>Испания<br>чемпион<br>мира</h2>
+      <p>Команда, которую списали после Катара, переизобрела футбол и забрала всё. Это не просто победа. Это манифест.</p>
+    </div>
+  </section>
+
+  <!-- LIVE TICKER -->
+  <div class="sect-inner"><div class="ticker">
+    <div class="ticker-game"><div class="ticker-teams">Зенит — Спартак</div><div class="ticker-score">2 : 1</div><div class="ticker-time">67' LIVE</div></div>
+    <div class="ticker-game"><div class="ticker-teams">ЦСКА — Динамо</div><div class="ticker-score">0 : 0</div><div class="ticker-time">34' LIVE</div></div>
+    <div class="ticker-game"><div class="ticker-teams">Краснодар — Ростов</div><div class="ticker-score">21:00</div></div>
+    <div class="ticker-game"><div class="ticker-teams">Локомотив — Ахмат</div><div class="ticker-score">21:30</div></div>
+  </div></div>
+
+  <!-- WHAT'S HOT — horizontal scroll -->
+  <section class="sect">
+    <div class="sect-inner">
+      <div class="sect-label">Прямо сейчас обсуждают</div>
+      <div class="scroll-row">
+        <article class="scroll-card"><div class="scroll-img" style="background:#1a3a5c"></div><span class="scroll-tag">Баскетбол</span><h3>Леброн — в «Филадельфии»</h3><div class="scroll-meta">+340 • 🔥 156</div></article>
+        <article class="scroll-card"><div class="scroll-img" style="background:#7b241c"></div><span class="scroll-tag">Хоккей</span><h3>Овечкин возвращается в «Динамо»</h3><div class="scroll-meta">+210 • 🔥 94</div></article>
+        <article class="scroll-card"><div class="scroll-img" style="background:#533483"></div><span class="scroll-tag">Скандал</span><h3>Пирло, Fonbet и итальянская федерация</h3><div class="scroll-meta">+180 • 🔥 320</div></article>
+        <article class="scroll-card"><div class="scroll-img" style="background:#0e6655"></div><span class="scroll-tag">Теннис</span><h3>Медведев: «Я не играю ради рейтинга»</h3><div class="scroll-meta">+95 • 🔥 67</div></article>
+        <article class="scroll-card"><div class="scroll-img" style="background:#b9770e"></div><span class="scroll-tag">Трансферы</span><h3>Винисиус в «Арсенал» за €180 млн</h3><div class="scroll-meta">+340 • 🔥 156</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION — зелёный блок -->
+  <section class="sect sect-accent">
+    <div class="sect-inner">
+      <div class="sect-label">Цитата дня</div>
+      <div class="quote">«Я больше не играю ради рейтинга. Я играю, потому что не могу иначе»</div>
+      <div class="quote-author">Даниил Медведев, 5-я ракетка мира</div>
+    </div>
+  </section>
+
+  <!-- GRID: редакция выбрала -->
+  <section class="sect sect-dark">
+    <div class="sect-inner">
+      <div class="sect-label">Редакция выбрала</div>
+      <div class="hgrid">
+        <div class="hgrid-card"><div class="hgrid-img" style="background:#1a3a5c"></div><h4>Почему Месси потерялся в финале. Тактический разбор</h4><div class="hgrid-meta">Вадим Лукомский • 14 мин</div></div>
+        <div class="hgrid-card"><div class="hgrid-img" style="background:#533483"></div><h4>50 выводов после чемпионата мира</h4><div class="hgrid-meta">Денис Романцов • 10 мин</div></div>
+        <div class="hgrid-card"><div class="hgrid-img" style="background:#7b241c"></div><h4>Как Месси подарил команде сумки и набор для мате</h4><div class="hgrid-meta">TouchlineX • 3 мин</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAST — красный блок -->
+  <section class="sect sect-red">
+    <div class="sect-inner">
+      <div class="sect-label">Не пропустите</div>
+      <div class="hgrid">
+        <div class="hgrid-card"><div class="hgrid-img" style="background:rgba(0,0,0,0.2)"></div><h4>153 кило томатов — двум чемпионам мира. Репортаж</h4><div class="hgrid-meta" style="color:rgba(255,255,255,0.6)">По самые помидоры</div></div>
+        <div class="hgrid-card"><div class="hgrid-img" style="background:rgba(0,0,0,0.2)"></div><h4>«Бостон» сбагрил MVP финала. Есть ли тут логика?</h4><div class="hgrid-meta" style="color:rgba(255,255,255,0.6)">Разбор теорий</div></div>
+        <div class="hgrid-card"><div class="hgrid-img" style="background:rgba(0,0,0,0.2)"></div><h4>Холанд посмотрел все мемы про себя. Оценил русскую девушку</h4><div class="hgrid-meta" style="color:rgba(255,255,255,0.6)">Обзор</div></div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

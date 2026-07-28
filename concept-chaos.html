@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 4: Chaos</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    body { background: #fafafa; color: #161616; font-family: 'TT Neoris', sans-serif; margin: 0; }
+    .hdr { padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0e0e0; background: #fff; position: sticky; top: 0; z-index: 100; }
+    .hdr-logo { font-family: 'TT Sports Display', sans-serif; font-size: 22px; font-weight: 700; }
+    .hdr-nav { display: flex; gap: 24px; font-size: 14px; }
+    .hdr-nav a { color: #161616; text-decoration: none; }
+
+    /* Masonry grid */
+    .grid { max-width: 1300px; margin: 24px auto; padding: 0 16px; columns: 4; column-gap: 16px; }
+    @media (max-width: 1100px) { .grid { columns: 3; } }
+    @media (max-width: 720px) { .grid { columns: 2; } }
+    @media (max-width: 480px) { .grid { columns: 1; } }
+
+    .card { break-inside: avoid; margin-bottom: 16px; cursor: pointer; background: #fff; overflow: hidden; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-2px); }
+    .card:hover .card-title { color: #00a876; }
+
+    .card-img { width: 100%; display: block; background: #e0e0e0; }
+    .card-body { padding: 12px; }
+    .card-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #00a876; margin-bottom: 4px; }
+    .card-title { font-family: 'TT Sports Display', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; transition: color 0.2s; }
+    .card-meta { font-size: 12px; color: #9b9b9b; }
+
+    /* Full-width breaker */
+    .breaker { max-width: 1300px; margin: 32px auto 16px; padding: 0 16px; }
+    .breaker h2 { font-family: 'TT Sports Display', sans-serif; font-size: 36px; font-weight: 700; border-top: 3px solid #161616; padding-top: 24px; }
+
+    /* Feature card — spans full width in grid */
+    .card-feature { columns: 1; display: grid; grid-template-columns: 1.5fr 1fr; margin-bottom: 16px; background: #161616; color: #fff; }
+    .card-feature .card-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .card-feature .card-title { font-size: 36px; color: #fff; }
+    .card-feature .card-desc { font-size: 16px; color: #9b9b9b; line-height: 1.5; margin-top: 12px; }
+    .card-feature .card-meta { color: #505050; margin-top: 16px; }
+    .card-feature .card-tag { color: #ff4848; }
+
+    /* Big card in masonry */
+    .card-xl .card-img { aspect-ratio: auto; }
+    .card-xl .card-title { font-size: 26px; }
+
+    /* Live pill */
+    .live-pill { display: inline-block; background: #ff4848; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; animation: pulse-bg 2s infinite; }
+    @keyframes pulse-bg { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    /* Quote card */
+    .card-quote { background: #00a876; color: #0a0a0a; padding: 24px; }
+    .card-quote .card-body { padding: 0; }
+    .card-quote .card-title { font-size: 24px; color: #0a0a0a; }
+    .card-quote .card-meta { color: rgba(0,0,0,0.5); }
+
+    @media (max-width: 720px) {
+      .card-feature { grid-template-columns: 1fr; }
+      .card-feature .card-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="hdr-logo">СПОРТС</div>
+    <nav class="hdr-nav">
+      <a href="#">Главное</a>
+      <a href="#">Матчи</a>
+      <a href="#">Блоги</a>
+      <a href="#">Ставки</a>
+    </nav>
+    <div class="hdr-time" style="font-size:13px;color:#9b9b9b">Пн 28 июля • 16:42 МСК</div>
+  </header>
+
+  <!-- FEATURE BREAKER -->
+  <article class="breaker" style="margin-top:24px">
+    <article class="card-feature">
+      <div class="card-img" style="background:linear-gradient(135deg, #1a1a2e, #16213e); aspect-ratio:16/9"></div>
+      <div class="card-body">
+        <div class="card-tag">Специальный репортаж</div>
+        <div class="card-title">Испания — чемпион мира. Конец эпохи Месси</div>
+        <div class="card-desc">Команда Де ла Фуэнте переизобрела футбол. Аргентина прощается с легендой. Вот как это было.</div>
+        <div class="card-meta">Вадим Лукомский • 18 минут • +480 • 🔥 210</div>
+      </div>
+    </article>
+  </article>
+
+  <!-- MASONRY GRID -->
+  <div class="grid">
+
+    <article class="card card-xl">
+      <div class="card-img" style="background:#7b241c; aspect-ratio:4/3"></div>
+      <div class="card-body">
+        <div class="card-tag">Трансферы</div>
+        <div class="card-title">Винисиус — в «Арсенал» за €180 млн. Сделка десятилетия</div>
+        <div class="card-meta">Артём Соколов • +340 • 🔥 156</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#2e4053; aspect-ratio:3/2"></div>
+      <div class="card-body">
+        <span class="live-pill">Live 67'</span>
+        <div class="card-tag">РПЛ</div>
+        <div class="card-title">Зенит — Спартак 2:1</div>
+        <div class="card-meta">Второй тайм • 45 000 зрителей</div>
+      </div>
+    </article>
+
+    <article class="card card-quote">
+      <div class="card-body">
+        <div class="card-tag" style="color:rgba(0,0,0,0.4)">Цитата дня</div>
+        <div class="card-title">«Я больше не играю ради рейтинга»</div>
+        <div class="card-meta">Даниил Медведев</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#1a5276; aspect-ratio:1/1"></div>
+      <div class="card-body">
+        <div class="card-tag">НБА</div>
+        <div class="card-title">Леброн выбрал «Филадельфию»</div>
+        <div class="card-meta">Антон Швец • +340 • 🔥 156</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#533483; aspect-ratio:3/4"></div>
+      <div class="card-body">
+        <div class="card-tag">Хоккей</div>
+        <div class="card-title">Овечкин — в «Динамо»!</div>
+        <div class="card-meta">Павел Лысенков • +210</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#0e6655; aspect-ratio:16/9"></div>
+      <div class="card-body">
+        <div class="card-tag">Скандал</div>
+        <div class="card-title">Пирло, Fonbet и ханжество</div>
+        <div class="card-meta">Никита Курбатов • +180</div>
+      </div>
+    </article>
+
+    <article class="card card-xl">
+      <div class="card-img" style="background:#1a3a5c; aspect-ratio:16/9"></div>
+      <div class="card-body">
+        <div class="card-tag">Тактика</div>
+        <div class="card-title">Почему Месси потерялся в финале</div>
+        <div class="card-meta">Вадим Лукомский • 14 минут • +510 • 🔥 340</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#daa520; aspect-ratio:1/1"></div>
+      <div class="card-body">
+        <div class="card-tag">Лонгрид</div>
+        <div class="card-title">153 кг томатов — чемпионам мира</div>
+        <div class="card-meta">По самые помидоры • +92</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img" style="background:#b9770e; aspect-ratio:4/3"></div>
+      <div class="card-body">
+        <div class="card-tag">Теннис</div>
+        <div class="card-title">Медведев снялся с Торонто</div>
+        <div class="card-meta">Софья Тартакова • 3 мин</div>
+      </div>
+    </article>
+
+    <article class="card card-xl">
+      <div class="card-img" style="background:#6c3483; aspect-ratio:16/9"></div>
+      <div class="card-body">
+        <div class="card-tag">Итоги</div>
+        <div class="card-title">50 выводов после чемпионата мира</div>
+        <div class="card-meta">Денис Романцов • 10 минут • +93 • 🔥 212</div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- BREAKER -->
+  <div class="breaker"><h2>Ещё больше новостей</h2></div>
+
+  <div class="grid">
+    <article class="card"><div class="card-img" style="background:#1a5276; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">Футбол</div><div class="card-title">Кахигао: «Если РФС не хочет нас уважать...»</div><div class="card-meta">+41 • 🔥 55</div></div></article>
+    <article class="card"><div class="card-img" style="background:#2e4053; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">Хоккей</div><div class="card-title">Путин подписал указ о Дне хоккея</div><div class="card-meta">+90 • 🔥 72</div></div></article>
+    <article class="card"><div class="card-img" style="background:#7b241c; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">ММА</div><div class="card-title">Стрикленд: «Футбол — гейская игра»</div><div class="card-meta">+160 • 🔥 152</div></div></article>
+    <article class="card"><div class="card-img" style="background:#0e6655; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">Медиа</div><div class="card-title">10-летняя россиянка станцевала с Шакирой</div><div class="card-meta">+56 • 🔥 47</div></div></article>
+    <article class="card"><div class="card-img" style="background:#533483; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">Футбол</div><div class="card-title">Гвардиола — кандидат в сборную Италии</div><div class="card-meta">+40 • 🔥 48</div></div></article>
+    <article class="card"><div class="card-img" style="background:#daa520; aspect-ratio:3/2"></div><div class="card-body"><div class="card-tag">Интервью</div><div class="card-title">Ротенберг: «Нужно учить хоккеистов общаться»</div><div class="card-meta">+11 • 🔥 15</div></div></article>
+  </div>
+
+</body>
+</html>
