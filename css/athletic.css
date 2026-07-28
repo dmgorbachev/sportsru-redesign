@@ -1,0 +1,118 @@
+/* ===== The Athletic style — curated, personalized, magazine ===== */
+
+/* ----- Hero ----- */
+.ath-hero { background: var(--ui-dark-new, #161616); padding: 32px 0; }
+.ath-hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.ath-hero-card { cursor: pointer; }
+.ath-hero-img {
+  aspect-ratio: 21/9; overflow: hidden;
+  background: var(--ui-disabled, #D8D8D8); margin-bottom: 20px;
+}
+.ath-hero-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 40px; font-weight: 700; color: #fff;
+  line-height: 1.1; margin-bottom: 12px; max-width: 800px;
+}
+.ath-hero-desc {
+  font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.5;
+  max-width: 700px; margin-bottom: 12px;
+}
+.ath-byline {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 13px; color: var(--ui-tertiary, #9B9B9B);
+  margin-top: 8px;
+}
+
+/* ----- Feed ----- */
+.ath-feed { padding: 40px 0 0; }
+.ath-feed-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1fr 280px; gap: 40px;
+}
+.ath-feed-header { grid-column: 1; margin-bottom: 24px; }
+.ath-feed-header h2 {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 28px; font-weight: 700; color: var(--ui-content, #222);
+}
+
+/* ----- Card grid ----- */
+.ath-grid { display: grid; gap: 24px; }
+.ath-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* First card is large — spans 2 cols */
+.ath-card-lg {
+  grid-column: span 2; display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+/* Regular card */
+.ath-card { cursor: pointer; }
+.ath-card:hover h3 { color: var(--ui-primary, #00A876); }
+.ath-card-img {
+  aspect-ratio: 16/10; overflow: hidden; margin-bottom: 12px;
+  background: var(--ui-disabled, #D8D8D8);
+}
+.ath-card-lg .ath-card-img { margin-bottom: 0; }
+.ath-card-body { display: flex; flex-direction: column; gap: 6px; }
+
+.ath-tag {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--ui-primary, #00A876);
+}
+.ath-card h3 {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--ui-content, #222);
+  line-height: 1.2; transition: color 0.2s;
+}
+.ath-card-lg h3 { font-size: 24px; }
+.ath-card-desc {
+  font-size: 14px; color: var(--ui-tertiary, #9B9B9B); line-height: 1.4;
+}
+
+/* ----- Sidebar ----- */
+.ath-sidebar {
+  border-left: 1px solid var(--ui-block-border, #EAEAEA);
+  padding-left: 24px;
+}
+.ath-sidebar-title {
+  font-family: 'TT Neoris', sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--ui-tertiary, #9B9B9B);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+}
+.ath-headlines { list-style: none; }
+.ath-headlines li {
+  padding: 10px 0; border-bottom: 1px solid var(--ui-fill, #F4F4F4);
+  font-size: 14px; line-height: 1.4;
+}
+.ath-headlines li:last-child { border-bottom: none; }
+.ath-headlines a {
+  color: var(--ui-content, #222); text-decoration: none;
+}
+.ath-headlines a:hover { color: var(--ui-primary, #00A876); }
+.ath-see-all {
+  display: inline-block; margin-top: 12px;
+  font-size: 13px; font-weight: 500; color: var(--ui-primary, #00A876);
+  text-decoration: none;
+}
+
+/* ----- Section blocks ----- */
+.ath-section { padding: 48px 0 0; }
+.ath-section-title {
+  font-family: 'TT Sports Display', sans-serif;
+  font-size: 24px; font-weight: 700; color: var(--ui-content, #222);
+  margin-bottom: 24px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--ui-content, #222);
+}
+
+/* ----- Hero text colors in dark bg ----- */
+.ath-hero .ath-byline { color: rgba(255,255,255,0.5); }
+
+/* ----- Responsive ----- */
+@media (max-width: 860px) {
+  .ath-hero-title { font-size: 24px; }
+  .ath-feed-inner { grid-template-columns: 1fr; padding: 0 16px; }
+  .ath-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--ui-block-border, #EAEAEA); padding-top: 24px; }
+  .ath-card-lg { grid-column: span 1; grid-template-columns: 1fr; }
+  .ath-grid-3 { grid-template-columns: 1fr; }
+  .ath-hero-inner { padding: 0 16px; }
+}
