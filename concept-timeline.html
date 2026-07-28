@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 10: Timeline</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin:0; box-sizing:border-box }
+    body { background:#fafafa; color:#161616; font-family:'TT Neoris',sans-serif }
+    .hdr { padding:16px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e0e0e0; background:#fff; position:sticky; top:0; z-index:100 }
+    .hdr-logo { font-family:'TT Sports Display',sans-serif; font-size:22px; font-weight:700 }
+    .hdr-time { font-size:13px; color:#9b9b9b }
+    .hdr-live { font-size:13px; color:#ff4848; font-weight:600 }
+    .page { max-width:700px; margin:0 auto; padding:0 24px }
+    .timeline { position:relative; padding:32px 0 }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:#e0e0e0 }
+    .entry { position:relative; padding-left:32px; margin-bottom:48px; cursor:pointer }
+    .entry::before { content:''; position:absolute; left:-6px; top:8px; width:15px; height:15px; border-radius:50%; border:3px solid #fff; background:#161616; z-index:1 }
+    .entry-featured::before { background:#ff4848; width:19px; height:19px; left:-8px; top:5px }
+    .entry-live::before { background:#ff4848; animation:pulse2 1.5s infinite }
+    @keyframes pulse2 { 0%,100%{box-shadow:0 0 0 0 rgba(255,72,72,.4)} 50%{box-shadow:0 0 0 8px rgba(255,72,72,0)} }
+    .entry-time { font-size:13px; color:#9b9b9b; font-weight:500; margin-bottom:6px }
+    .entry-tag { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#00a876; margin-bottom:6px }
+    .entry-featured .entry-tag { color:#ff4848 }
+    .entry h2 { font-family:'TT Sports Display',sans-serif; font-size:28px; font-weight:700; line-height:1.15; margin-bottom:8px; transition:color .2s }
+    .entry:hover h2 { color:#00a876 }
+    .entry-featured h2 { font-size:36px }
+    .entry p { font-size:15px; color:#505050; line-height:1.5; margin-bottom:8px }
+    .entry-meta { font-size:13px; color:#9b9b9b; display:flex; gap:12px }
+    .entry-stats { color:#161616; font-weight:600 }
+    .entry-live-badge { display:inline-block; background:#ff4848; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px }
+    @media (max-width:600px) {
+      .entry h2 { font-size:22px }
+      .entry-featured h2 { font-size:28px }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-logo">СПОРТС</div>
+  <div class="hdr-live">● LIVE: 2 матча</div>
+  <div class="hdr-time">Пн 28 июля 2026</div>
+</header>
+
+<div class="page">
+  <div class="timeline">
+
+    <article class="entry entry-live">
+      <div class="entry-time">16:42 — прямо сейчас</div>
+      <div class="entry-live-badge">Live</div>
+      <div class="entry-tag">РПЛ</div>
+      <h2>Зенит — Спартак 2:1</h2>
+      <p>Второй тайм. Кассьерра оформил дубль. Спартак ответил голом Промеса с пенальти. 45 000 зрителей на «Газпром Арене».</p>
+      <div class="entry-meta"><span>67 минута</span><span class="entry-stats">🔥 890</span></div>
+    </article>
+
+    <article class="entry entry-featured">
+      <div class="entry-time">15:00 — главное</div>
+      <div class="entry-tag">Чемпионат мира</div>
+      <h2>Испания — чемпион мира. Финал, который войдёт в историю</h2>
+      <p>Голы Ямала и Гави приносят Испании второе золото за 16 лет. Де ла Фуэнте построил машину. Аргентина прощается с Месси на пике.</p>
+      <div class="entry-meta"><span>Вадим Лукомский</span><span>18 мин</span><span class="entry-stats">+480 • 🔥 210</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">14:15 — трансферы</div>
+      <div class="entry-tag">Инсайд</div>
+      <h2>Винисиус — в «Арсенал» за €180 млн</h2>
+      <p>«Реал» молчит. Бразилец может покинуть Мадрид этим летом. Крупнейшая сделка в истории АПЛ.</p>
+      <div class="entry-meta"><span>Артём Соколов</span><span>5 мин</span><span class="entry-stats">+340 • 🔥 156</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">13:30 — хоккей</div>
+      <div class="entry-tag">НХЛ / КХЛ</div>
+      <h2>Овечкин — в «Динамо»!</h2>
+      <p>895 голов в НХЛ, рекорд Гретцки — и возвращение домой. Контракт на год. Москва встречает царя.</p>
+      <div class="entry-meta"><span>Павел Лысенков</span><span>6 мин</span><span class="entry-stats">+210 • 🔥 94</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">12:45 — баскетбол</div>
+      <div class="entry-tag">НБА</div>
+      <h2>Леброн выбрал «Филадельфию»</h2>
+      <p>39-летний король — в «Сиксерс». Контракт на два года. Город в истерике: от ликования до шока.</p>
+      <div class="entry-meta"><span>Антон Швец</span><span>4 мин</span><span class="entry-stats">+340 • 🔥 156</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">11:50 — скандал</div>
+      <div class="entry-tag">Расследование</div>
+      <h2>Пирло, Fonbet и ханжество европейского футбола</h2>
+      <p>Легенду не пустили в сборную Италии из-за контракта с российским букмекером. Где спорт, а где политика?</p>
+      <div class="entry-meta"><span>Никита Курбатов</span><span>7 мин</span><span class="entry-stats">+180 • 🔥 320</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">10:20 — теннис</div>
+      <div class="entry-tag">Интервью</div>
+      <h2>«Я не играю ради рейтинга» — Медведев</h2>
+      <p>О теннисе, России и о том, почему он больше не хочет быть №1 в мире.</p>
+      <div class="entry-meta"><span>Софья Тартакова</span><span>12 мин</span><span class="entry-stats">+95 • 🔥 67</span></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-time">09:05 — тактика</div>
+      <div class="entry-tag">Разбор</div>
+      <h2>Почему Месси потерялся в финале</h2>
+      <p>Схема, которая убила аргентинскую магию. Посекундный разбор перемещений.</p>
+      <div class="entry-meta"><span>Вадим Лукомский</span><span>14 мин</span><span class="entry-stats">+510 • 🔥 340</span></div>
+    </article>
+
+  </div>
+</div>
+</body>
+</html>

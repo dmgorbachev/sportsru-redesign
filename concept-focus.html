@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 9: Focus</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin:0; box-sizing:border-box }
+    body { background:#0a0a0a; color:#fff; font-family:'TT Neoris',sans-serif }
+    .hdr { position:fixed; top:0; left:0; right:0; z-index:100; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px) }
+    .hdr-logo { font-family:'TT Sports Display',sans-serif; font-size:20px; font-weight:700 }
+    .hdr-live { font-size:12px; color:#ff4848; display:flex; align-items:center; gap:6px }
+    .hdr-dot { width:6px; height:6px; background:#ff4848; border-radius:50%; animation:pulse 1.5s infinite }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .page { padding-top:56px }
+
+    /* MASSIVE FOCUS */
+    .focus { min-height:70vh; display:flex; flex-direction:column; justify-content:flex-end; padding:48px; position:relative; cursor:pointer }
+    .focus-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 40% 30%, #1a3a5c 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, #7b241c 0%, transparent 50%), #0a0a0a }
+    .focus-content { position:relative; z-index:2; max-width:900px }
+    .focus-num { font-family:'TT Sports Display',sans-serif; font-size:160px; font-weight:700; line-height:.8; color:rgba(255,255,255,0.03); position:absolute; top:-60px; left:-20px; z-index:0; user-select:none }
+    .focus-tag { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:16px; position:relative; z-index:1 }
+    .focus h2 { font-family:'TT Sports Display',sans-serif; font-size:80px; font-weight:700; line-height:.95; letter-spacing:-2px; margin-bottom:16px; position:relative; z-index:1 }
+    .focus p { font-size:20px; color:rgba(255,255,255,0.5); max-width:600px; line-height:1.5; position:relative; z-index:1 }
+    .focus-meta { font-size:14px; color:rgba(255,255,255,0.3); margin-top:20px; display:flex; gap:16px; position:relative; z-index:1 }
+    .focus-meta strong { color:#00a876 }
+
+    /* ROW OF MINIATURES */
+    .minis { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; background:#0a0a0a }
+    .mini { aspect-ratio:3/2; cursor:pointer; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:20px }
+    .mini:hover .mini-title { color:#00a876 }
+    .mini:hover::after { opacity:.6 }
+    .mini::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.1) 60%); transition:opacity .3s; opacity:.85 }
+    .mini-content { position:relative; z-index:2 }
+    .mini-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#00a876; margin-bottom:4px }
+    .mini-title { font-family:'TT Sports Display',sans-serif; font-size:18px; font-weight:700; line-height:1.2; transition:color .2s }
+    .mini-fire { font-size:12px; color:rgba(255,255,255,0.4); margin-top:4px }
+
+    /* HORIZONTAL SCROLL ROW */
+    .scroll-sect { padding:48px 24px }
+    .scroll-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#505050; margin-bottom:20px }
+    .scroll-row { display:flex; gap:16px; overflow-x:auto; padding-bottom:8px }
+    .scroll-card { flex-shrink:0; width:280px; cursor:pointer }
+    .scroll-card:hover h3 { color:#00a876 }
+    .scroll-img { aspect-ratio:4/3; background:#1a1a1a; margin-bottom:10px }
+    .scroll-card h3 { font-family:'TT Sports Display',sans-serif; font-size:18px; font-weight:700; line-height:1.2; transition:color .2s }
+    .scroll-meta { font-size:12px; color:#505050; margin-top:4px }
+
+    @media (max-width:800px) {
+      .focus h2 { font-size:40px }
+      .focus-num { font-size:100px; top:-30px }
+      .focus { padding:32px 20px; min-height:50vh }
+      .minis { grid-template-columns:repeat(2,1fr) }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-logo">СПОРТС</div>
+  <div class="hdr-live"><span class="hdr-dot"></span>Зенит — Спартак 2:1, 67'</div>
+  <div style="font-size:12px;color:#505050">Пн 28 июля</div>
+</header>
+
+<div class="page">
+
+  <!-- FOCUS STORY -->
+  <section class="focus">
+    <div class="focus-bg"></div>
+    <div class="focus-content">
+      <div class="focus-num">01</div>
+      <div class="focus-tag">История дня</div>
+      <h2>Испания — чемпион мира</h2>
+      <p>Команда Де ла Фуэнте переизобрела футбол. Голы Ямала и Гави приносят второе золото за 16 лет. Аргентина прощается с Месси. Конец эпохи.</p>
+      <div class="focus-meta"><strong>Вадим Лукомский</strong><span>18 минут</span><span>+480</span><span>🔥 210</span></div>
+    </div>
+  </section>
+
+  <!-- MINIATURES -->
+  <div class="minis">
+    <article class="mini" style="background:linear-gradient(135deg,#7b241c,#c0392b)">
+      <div class="mini-content">
+        <div class="mini-tag">Трансферы</div>
+        <div class="mini-title">Винисиус — в «Арсенал» за €180 млн</div>
+        <div class="mini-fire">🔥 156</div>
+      </div>
+    </article>
+    <article class="mini" style="background:linear-gradient(135deg,#1a5276,#2980b9)">
+      <div class="mini-content">
+        <div class="mini-tag">НХЛ</div>
+        <div class="mini-title">Овечкин — в «Динамо»!</div>
+        <div class="mini-fire">🔥 94</div>
+      </div>
+    </article>
+    <article class="mini" style="background:linear-gradient(135deg,#533483,#8e44ad)">
+      <div class="mini-content">
+        <div class="mini-tag">НБА</div>
+        <div class="mini-title">Леброн выбрал «Филадельфию»</div>
+        <div class="mini-fire">🔥 156</div>
+      </div>
+    </article>
+    <article class="mini" style="background:linear-gradient(135deg,#0e6655,#00a876)">
+      <div class="mini-content">
+        <div class="mini-tag">Скандал</div>
+        <div class="mini-title">Пирло, Fonbet и ханжество</div>
+        <div class="mini-fire">🔥 320</div>
+      </div>
+    </article>
+  </div>
+
+  <!-- SCROLL: разборы -->
+  <div class="scroll-sect">
+    <div class="scroll-label">Разборы и аналитика</div>
+    <div class="scroll-row">
+      <article class="scroll-card"><div class="scroll-img" style="background:#1a3a5c"></div><h3>Почему Месси потерялся в финале</h3><div class="scroll-meta">Лукомский • 14 мин • +510</div></article>
+      <article class="scroll-card"><div class="scroll-img" style="background:#2e4053"></div><h3>50 выводов после чемпионата мира</h3><div class="scroll-meta">Романцов • 10 мин • +93</div></article>
+      <article class="scroll-card"><div class="scroll-img" style="background:#b9770e"></div><h3>9 карточек Аргентины: феномен или система?</h3><div class="scroll-meta">Соколов • 6 мин • +57</div></article>
+      <article class="scroll-card"><div class="scroll-img" style="background:#6c3483"></div><h3>«Я не играю ради рейтинга» — Медведев</h3><div class="scroll-meta">Тартакова • 12 мин • +95</div></article>
+      <article class="scroll-card"><div class="scroll-img" style="background:#daa520"></div><h3>153 кг томатов — чемпионам мира</h3><div class="scroll-meta">Репортаж • +92</div></article>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
