@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 13: GQ</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin:0; box-sizing:border-box }
+    body { background:#fff; color:#111; font-family:'TT Neoris',sans-serif }
+    .hdr { padding:20px 32px; display:flex; justify-content:space-between; align-items:center; border-bottom:4px solid #111; background:#fff; position:sticky; top:0; z-index:100 }
+    .hdr-logo { font-family:'TT Sports Display',sans-serif; font-size:32px; font-weight:900; letter-spacing:-1px }
+    .hdr-nav { display:flex; gap:24px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px }
+    .hdr-nav a { color:#111; text-decoration:none }
+    .page { max-width:1100px; margin:0 auto; padding:0 24px }
+
+    /* HERO — massive image + bold statement */
+    .hero { position:relative; min-height:80vh; display:flex; align-items:flex-end; margin:24px 0 48px; background:linear-gradient(135deg,#111 30%,#222 100%) }
+    .hero-content { padding:48px; max-width:650px; position:relative; z-index:2 }
+    .hero-eyebrow { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#ff4848; margin-bottom:16px }
+    .hero h1 { font-family:'TT Sports Display',sans-serif; font-size:80px; font-weight:900; line-height:.95; letter-spacing:-2px; color:#fff; text-transform:uppercase; margin-bottom:16px }
+    .hero p { font-size:20px; color:#999; line-height:1.5; font-weight:300 }
+
+    /* STRIP */
+    .strip { display:flex; gap:2px; margin-bottom:48px; background:#111 }
+    .strip-item { flex:1; background:#fff; padding:24px; cursor:pointer; transition:background .2s }
+    .strip-item:hover { background:#f5f5f5 }
+    .strip-item:hover .strip-title { color:#ff4848 }
+    .strip-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#999; margin-bottom:8px }
+    .strip-title { font-family:'TT Sports Display',sans-serif; font-size:20px; font-weight:700; line-height:1.2; transition:color .2s }
+
+    /* BOLD GRID */
+    .bold-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:#111; margin-bottom:48px }
+    .bold-card { background:#fff; padding:32px; cursor:pointer; transition:background .2s }
+    .bold-card:hover { background:#f8f8f8 }
+    .bold-card:hover .bold-title { color:#ff4848 }
+    .bold-num { font-family:'TT Sports Display',sans-serif; font-size:72px; font-weight:900; color:#f0f0f0; line-height:1; margin-bottom:8px }
+    .bold-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#ff4848; margin-bottom:8px }
+    .bold-title { font-family:'TT Sports Display',sans-serif; font-size:24px; font-weight:700; line-height:1.15; margin-bottom:8px; transition:color .2s }
+    .bold-desc { font-size:14px; color:#666; line-height:1.4 }
+
+    /* STATEMENT BLOCK */
+    .statement { padding:64px 0; text-align:center; border-top:4px solid #111; border-bottom:4px solid #111; margin-bottom:48px }
+    .statement p { font-family:'TT Sports Display',sans-serif; font-size:48px; font-weight:700; line-height:1.15; max-width:800px; margin:0 auto }
+    .statement-author { font-size:14px; color:#999; margin-top:16px; letter-spacing:1px; text-transform:uppercase }
+
+    /* GALLERY GRID */
+    .gallery { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:#111; margin-bottom:48px }
+    .gallery-card { background:#fff; padding:40px; cursor:pointer; min-height:200px; display:flex; flex-direction:column; justify-content:flex-end; transition:background .2s }
+    .gallery-card:hover { background:#111; color:#fff }
+    .gallery-card:hover .gallery-title { color:#ff4848 }
+    .gallery-card:hover .gallery-desc { color:#999 }
+    .gallery-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#999; margin-bottom:12px }
+    .gallery-title { font-family:'TT Sports Display',sans-serif; font-size:32px; font-weight:700; line-height:1.1; margin-bottom:8px; transition:color .2s }
+    .gallery-desc { font-size:15px; color:#666; line-height:1.4; transition:color .2s }
+
+    @media (max-width:800px) {
+      .hero h1 { font-size:40px }
+      .bold-grid,.strip { grid-template-columns:1fr }
+      .statement p { font-size:28px }
+      .gallery { grid-template-columns:1fr }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-logo">СПОРТС</div>
+  <nav class="hdr-nav"><a href="#">Футбол</a><a href="#">Стиль</a><a href="#">Люди</a><a href="#">Мнения</a></nav>
+  <div style="font-size:12px;font-weight:700;letter-spacing:1px">28 ИЮЛЯ 2026</div>
+</header>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Специальный выпуск</div>
+      <h1>Золото</h1>
+      <p>Испания — чемпион мира. Как команда Де ла Фуэнте переписала историю. Портрет поколения, которому нет равных.</p>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item"><div class="strip-tag">Баскетбол</div><div class="strip-title">Леброн выбрал «Филадельфию». Почему сейчас?</div></div>
+    <div class="strip-item"><div class="strip-tag">Хоккей</div><div class="strip-title">Возвращение царя: Овечкин в «Динамо»</div></div>
+    <div class="strip-item"><div class="strip-tag">Трансферы</div><div class="strip-title">Винисиус — в «Арсенал» за €180 млн</div></div>
+    <div class="strip-item"><div class="strip-tag">Скандал</div><div class="strip-title">Пирло против системы</div></div>
+  </div>
+
+  <!-- BOLD NUMBERED GRID -->
+  <div class="bold-grid">
+    <article class="bold-card"><div class="bold-num">01</div><div class="bold-tag">Репортаж</div><div class="bold-title">Ночь в Мадриде: как город праздновал победу</div><div class="bold-desc">Фонтаны, флаги и 2 миллиона человек на улицах. Репортаж из центра событий.</div></article>
+    <article class="bold-card"><div class="bold-num">02</div><div class="bold-tag">Аналитика</div><div class="bold-title">Почему Месси потерялся в финале</div><div class="bold-desc">Тактический разбор: как испанская схема убила аргентинскую магию.</div></article>
+    <article class="bold-card"><div class="bold-num">03</div><div class="bold-tag">Интервью</div><div class="bold-title">«Не хочу быть №1» — Медведев</div><div class="bold-desc">Самый откровенный разговор года. О теннисе, России и свободе.</div></article>
+  </div>
+
+  <!-- STATEMENT -->
+  <div class="statement">
+    <p>«Футбол — это не работа. Это искусство. А искусство не терпит компромиссов»</p>
+    <div class="statement-author">Луис де ла Фуэнте, тренер сборной Испании</div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery">
+    <article class="gallery-card"><div class="gallery-tag">Лонгрид</div><div class="gallery-title">Златан в костюме и кроссовках</div><div class="gallery-desc">Как одеваются ТВ-эксперты на чемпионате мира. Гид по стилю.</div></article>
+    <article class="gallery-card"><div class="gallery-tag">Репортаж</div><div class="gallery-title">153 кило томатов — чемпионам мира</div><div class="gallery-desc">Как испанская деревня чествовала Гави и Руиса. По самые помидоры.</div></article>
+    <article class="gallery-card"><div class="gallery-tag">Мнение</div><div class="gallery-title">50 выводов после чемпионата мира</div><div class="gallery-desc">От лучшего гола до главного разочарования. Всё, что нужно знать.</div></article>
+    <article class="gallery-card"><div class="gallery-tag">Расследование</div><div class="gallery-title">Пирло, Fonbet и ханжество</div><div class="gallery-desc">Где спорт, а где политика? Полная хронология скандала.</div></article>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports.ru — Концепт 14: Monocle</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin:0; box-sizing:border-box }
+    body { background:#f4f2ee; color:#2c2416; font-family:'TT Neoris',sans-serif }
+    .hdr { padding:20px 32px; display:flex; justify-content:space-between; align-items:center; background:#f4f2ee; border-bottom:1px solid #d4cfc5; position:sticky; top:0; z-index:100 }
+    .hdr-logo { font-family:'TT Sports Display',sans-serif; font-size:22px; font-weight:700; letter-spacing:3px }
+    .hdr-meta { font-size:12px; color:#8c8273; letter-spacing:1px; text-transform:uppercase }
+    .page { max-width:1100px; margin:0 auto; padding:0 24px }
+
+    /* HERO — clean, minimal, architectural */
+    .hero { display:grid; grid-template-columns:1fr 1fr; gap:0; margin:32px 0 48px; min-height:60vh }
+    .hero-visual { background:linear-gradient(135deg,#d4cfc5,#b8af9e,#c5bca8); display:flex; align-items:flex-end; padding:32px }
+    .hero-visual-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(44,36,22,0.3) }
+    .hero-text { padding:32px 0 32px 48px; display:flex; flex-direction:column; justify-content:center }
+    .hero-issue { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#8c8273; margin-bottom:16px }
+    .hero h1 { font-family:'TT Sports Display',sans-serif; font-size:52px; font-weight:700; line-height:1.05; letter-spacing:-1px; margin-bottom:20px }
+    .hero p { font-size:16px; color:#6b5e4f; line-height:1.6; margin-bottom:20px }
+    .hero-byline { font-size:13px; color:#8c8273; display:flex; gap:16px }
+    .hero-byline strong { color:#2c2416 }
+
+    /* BRIEFING — compact news */
+    .briefing { border-top:2px solid #2c2416; border-bottom:2px solid #2c2416; padding:24px 0; margin-bottom:48px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px }
+    .brief-col {}
+    .brief-col-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#8c8273; margin-bottom:16px; font-weight:700 }
+    .brief-item { padding:10px 0; border-bottom:1px solid #d4cfc5; font-size:14px; cursor:pointer }
+    .brief-item:hover { color:#00a876 }
+    .brief-item:last-child { border:none }
+    .brief-time { font-size:11px; color:#b8af9e; margin-right:8px }
+
+    /* FEATURE GRID */
+    .feat-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#d4cfc5; margin-bottom:48px }
+    .feat-card { background:#f4f2ee; padding:40px; cursor:pointer; transition:background .2s }
+    .feat-card:hover { background:#ebe7df }
+    .feat-card:hover .feat-title { color:#00a876 }
+    .feat-num { font-family:'TT Sports Display',sans-serif; font-size:64px; font-weight:700; color:#d4cfc5; line-height:1; margin-bottom:8px }
+    .feat-tag { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#8c8273; margin-bottom:10px }
+    .feat-title { font-family:'TT Sports Display',sans-serif; font-size:26px; font-weight:700; line-height:1.15; margin-bottom:8px; transition:color .2s }
+    .feat-desc { font-size:14px; color:#6b5e4f; line-height:1.5 }
+
+    /* CULTURE STRIP */
+    .culture { margin-bottom:48px }
+    .culture-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#8c8273; margin-bottom:20px; font-weight:700 }
+    .culture-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#d4cfc5 }
+    .cult-card { background:#f4f2ee; padding:24px; cursor:pointer; transition:background .2s }
+    .cult-card:hover { background:#ebe7df }
+    .cult-card:hover h4 { color:#00a876 }
+    .cult-card h4 { font-family:'TT Sports Display',sans-serif; font-size:18px; font-weight:700; line-height:1.2; transition:color .2s }
+    .cult-meta { font-size:12px; color:#b8af9e; margin-top:6px }
+
+    /* FOOTER */
+    .footer { border-top:2px solid #2c2416; padding:32px 0; display:flex; justify-content:space-between; align-items:center; margin-bottom:48px }
+    .footer-info { font-size:12px; color:#8c8273; line-height:1.6 }
+    .footer-brand { font-family:'TT Sports Display',sans-serif; font-size:18px; font-weight:700; letter-spacing:2px }
+
+    @media (max-width:800px) {
+      .hero,.briefing,.feat-grid,.culture-grid { grid-template-columns:1fr }
+      .hero h1 { font-size:32px }
+      .hero-text { padding:24px 0 }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-logo">СПОРТС</div>
+  <div class="hdr-meta">The Global Sports Edition</div>
+  <div class="hdr-meta">Monday 28 July 2026</div>
+</header>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-visual"><div class="hero-visual-label">Финал • Нью-Йорк</div></div>
+    <div class="hero-text">
+      <div class="hero-issue">Выпуск 214 • Июль 2026</div>
+      <h1>Испания забирает мир</h1>
+      <p>Команда, которую никто не ждал, переизобрела футбол. Голы Ямала и Гави, слёзы Месси и новый порядок в мировом спорте. Репортаж из сердца турнира.</p>
+      <div class="hero-byline"><strong>Вадим Лукомский</strong><span>24 минуты</span><span>Фотографии: Стив Маккари</span></div>
+    </div>
+  </div>
+
+  <!-- BRIEFING -->
+  <div class="briefing">
+    <div class="brief-col">
+      <div class="brief-col-title">The Briefing</div>
+      <div class="brief-item"><span class="brief-time">09:00</span>ЧМ-2026: итоги турнира в цифрах</div>
+      <div class="brief-item"><span class="brief-time">10:30</span>Трансферное окно: главные сделки</div>
+      <div class="brief-item"><span class="brief-time">12:00</span>Де ла Фуэнте — новый Арагонес?</div>
+    </div>
+    <div class="brief-col">
+      <div class="brief-col-title">Мнения</div>
+      <div class="brief-item"><span class="brief-time">11:00</span>Медведев: свобода важнее рейтинга</div>
+      <div class="brief-item"><span class="brief-time">13:00</span>Почему Месси потерялся в финале</div>
+      <div class="brief-item"><span class="brief-time">15:00</span>Пирло и политика: где граница?</div>
+    </div>
+    <div class="brief-col">
+      <div class="brief-col-title">Культура</div>
+      <div class="brief-item"><span class="brief-time">14:00</span>Златан в костюме: стиль звёзд ЧМ</div>
+      <div class="brief-item"><span class="brief-time">16:00</span>153 кг томатов — чемпионам мира</div>
+      <div class="brief-item"><span class="brief-time">18:00</span>Форма сборных: дизайн-ревью</div>
+    </div>
+  </div>
+
+  <!-- FEATURE GRID -->
+  <div class="feat-grid">
+    <article class="feat-card"><div class="feat-num">01</div><div class="feat-tag">Баскетбол</div><div class="feat-title">Леброн выбрал «Филадельфию»: конец эпохи в Лос-Анджелесе</div><div class="feat-desc">39-летний король меняет город. Что это значит для НБА и для самого Джеймса.</div></article>
+    <article class="feat-card"><div class="feat-num">02</div><div class="feat-tag">Хоккей</div><div class="feat-title">Овечкин возвращается. «Динамо» ждёт царя</div><div class="feat-desc">895 голов в НХЛ — и теперь Москва. Контракт, детали, реакция лиги.</div></article>
+    <article class="feat-card"><div class="feat-num">03</div><div class="feat-tag">Трансферы</div><div class="feat-title">Винисиус — в «Арсенал». Сделка десятилетия</div><div class="feat-desc">€180 млн. Рекорд Премьер-лиги. Как это меняет баланс сил в Европе.</div></article>
+    <article class="feat-card"><div class="feat-num">04</div><div class="feat-tag">Интервью</div><div class="feat-title">Де ла Фуэнте: «Я не гений. Я доверяю игрокам»</div><div class="feat-desc">Тренер чемпионов мира — о финале, тактике и главном секрете команды.</div></article>
+  </div>
+
+  <!-- CULTURE -->
+  <div class="culture">
+    <div class="culture-title">Культура и стиль</div>
+    <div class="culture-grid">
+      <article class="cult-card"><h4>Как одеваются звёзды ЧМ</h4><div class="cult-meta">Златан, Анри, Рио — гид</div></article>
+      <article class="cult-card"><h4>153 кг томатов чемпионам</h4><div class="cult-meta">Репортаж из деревни</div></article>
+      <article class="cult-card"><h4>Форма ЧМ-2026: рейтинг</h4><div class="cult-meta">От худшей к лучшей</div></article>
+      <article class="cult-card"><h4>Города ЧМ: где лучше</h4><div class="cult-meta">Нью-Йорк vs Майами vs Даллас</div></article>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-info">Спортс — ежедневное спортивное издание<br>Основано в 1998 году</div>
+    <div class="footer-brand">СПОРТС</div>
+  </div>
+
+</div>
+</body>
+</html>
