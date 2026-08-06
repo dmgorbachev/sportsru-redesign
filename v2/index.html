@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Sports.ru</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/tokens.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box }
+    body { background:#f4f4f4; color:#222; font-family:'TT Neoris',sans-serif; font-weight:500; font-size:16px; -webkit-font-smoothing:antialiased }
+    img { max-width:100%; display:block }
+
+    /* Layout */
+    .container { max-width:393px; margin:0 auto; background:#f4f4f4 }
+
+    /* Header */
+    .header { display:flex; align-items:center; justify-content:space-between; padding:4px 16px; height:56px; background:#161616; }
+    .header-logo { display:flex; align-items:center; gap:8px }
+    .header-logo svg { width:102px; height:26px }
+    .header-actions { display:flex; gap:0; }
+    .header-btn { width:48px; height:48px; display:flex; align-items:center; justify-content:center; cursor:pointer; background:none; border:none; padding:0 }
+    .header-btn img { width:24px; height:24px; filter:brightness(0) invert(1) }
+
+    /* Top buttons */
+    .top-actions { padding:8px 16px; display:flex; gap:8px }
+    .top-actions .btn { font-family:'TT Neoris',sans-serif; font-size:14px; font-weight:500; padding:8px 16px; border-radius:8px; background:#f4f4f4; border:1px solid #e0e0e0; cursor:pointer; color:#222 }
+    .top-scroll { padding:0 16px 12px; overflow-x:auto; display:flex; gap:8px }
+    .top-scroll::-webkit-scrollbar { display:none }
+    .top-scroll-card { flex-shrink:0; width:130px; cursor:pointer }
+    .top-scroll-img { width:130px; height:76px; background:#e0e0e0; border-radius:8px; margin-bottom:4px }
+    .top-scroll-text { font-size:12px; line-height:1.3; color:#222 }
+
+    /* Section */
+    .section { background:#fff; margin-bottom:32px; padding:16px }
+    .section-header { display:flex; align-items:center; gap:8px; margin-bottom:12px }
+    .section-header img, .section-header svg { width:24px; height:24px }
+    .section-title { font-family:'TT Sports Display',sans-serif; font-size:16px; font-weight:600; color:#222 }
+
+    /* Supertop */
+    .supertop-img { width:100%; aspect-ratio:460/260; background:#e0e0e0; border-radius:8px; margin-bottom:8px }
+    .supertop-title { font-family:'TT Neoris',sans-serif; font-size:16px; font-weight:500; line-height:1.25; margin-bottom:4px }
+    .supertop-meta { font-size:12px; color:#9b9b9b; display:flex; gap:12px }
+
+    /* Divider */
+    .divider { border:none; border-bottom:1px solid #f0f0f0; margin:12px 0 }
+
+    /* Blog card */
+    .blog { padding:12px 0; display:flex; gap:12px; cursor:pointer }
+    .blog-img { width:24px; height:24px; border-radius:50%; background:#e0e0e0; flex-shrink:0 }
+    .blog-content { flex:1; min-width:0 }
+    .blog-title { font-size:14px; line-height:1.3; margin-bottom:2px }
+    .blog-meta { font-size:12px; color:#9b9b9b }
+
+    /* Match cards row */
+    .match-row { display:flex; gap:8px; overflow-x:auto; padding-bottom:4px }
+    .match-row::-webkit-scrollbar { display:none }
+    .match-card { flex-shrink:0; width:320px; background:#f9f9f9; border-radius:12px; padding:16px; border:1px solid #f0f0f0 }
+    .match-info { font-size:12px; color:#9b9b9b; margin-bottom:12px }
+    .match-teams { display:flex; align-items:center; justify-content:space-between; gap:12px }
+    .match-team { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1 }
+    .match-team-logo { width:40px; height:40px; background:#e0e0e0; border-radius:50% }
+    .match-team-name { font-size:12px; text-align:center; line-height:1.2 }
+    .match-score { font-family:'TT Sports Display',sans-serif; font-size:28px; font-weight:600; letter-spacing:4px }
+    .match-bet { display:flex; justify-content:space-around; margin-top:12px; padding-top:12px; border-top:1px solid #f0f0f0 }
+    .match-odd { text-align:center; font-size:12px }
+    .match-odd-val { font-weight:600; font-size:14px }
+
+    /* Betting widget */
+    .betting { background:#470079; border-radius:12px; padding:16px; color:#fff; margin-bottom:12px }
+    .betting-pattern { position:relative }
+    .betting-title { font-family:'TT Neoris',sans-serif; font-weight:500; font-size:18px; margin-bottom:12px; display:flex; align-items:center; gap:6px }
+    .betting-match { padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1) }
+    .betting-match:last-child { border:none }
+    .betting-match-info { font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:8px }
+    .betting-match-teams { display:flex; align-items:center; justify-content:space-between }
+    .betting-btn { display:block; width:100%; background:rgba(255,255,255,0.15); border:none; color:#fff; font-family:'TT Neoris',sans-serif; font-size:14px; padding:10px; border-radius:8px; margin-top:8px; cursor:pointer; text-align:center }
+
+    /* News list */
+    .news-item { padding:12px 0; display:flex; gap:12px; cursor:pointer; border-bottom:1px solid #f5f5f5 }
+    .news-item:last-child { border:none }
+    .news-num { font-family:'TT Sports Display',sans-serif; font-size:16px; font-weight:600; color:#9b9b9b; flex-shrink:0; width:28px }
+    .news-content { flex:1; min-width:0 }
+    .news-title { font-size:14px; line-height:1.3; margin-bottom:4px }
+    .news-title .fire { color:#ff4848; font-size:12px }
+    .news-meta { font-size:12px; color:#9b9b9b; display:flex; gap:8px }
+
+    /* Tabs */
+    .tabs { display:flex; gap:8px; overflow-x:auto; padding:4px 0 }
+    .tabs::-webkit-scrollbar { display:none }
+    .tab { font-size:14px; padding:6px 12px; border-radius:8px; background:#f4f4f4; cursor:pointer; white-space:nowrap; transition:all .2s }
+    .tab.active { background:#222; color:#fff }
+
+    /* Ad banner */
+    .ad { background:#e8e8e8; border-radius:8px; aspect-ratio:518/250; display:flex; align-items:center; justify-content:center; color:#9b9b9b; font-size:12px }
+
+    /* Short posts */
+    .short-post { padding:16px; border-bottom:1px solid #f0f0f0 }
+    .short-post-header { display:flex; align-items:center; gap:8px; margin-bottom:8px }
+    .short-post-avatar { width:32px; height:32px; border-radius:50%; background:#e0e0e0; flex-shrink:0 }
+    .short-post-author { font-size:14px; font-weight:600 }
+    .short-post-time { font-size:12px; color:#9b9b9b }
+    .short-post-text { font-size:14px; line-height:1.4; margin-bottom:8px }
+    .short-post-stats { font-size:12px; color:#9b9b9b; display:flex; gap:12px }
+    .short-post-img { width:100%; aspect-ratio:16/9; background:#e0e0e0; border-radius:8px; margin:8px 0 }
+
+    /* Button all */
+    .btn-all { display:block; width:100%; padding:12px; text-align:center; font-family:'TT Neoris',sans-serif; font-size:14px; background:#f4f4f4; border:none; border-radius:8px; cursor:pointer; color:#222; font-weight:500 }
+
+    /* Bottom nav */
+    .bottom-nav { display:none }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <svg viewBox="0 0 102 26" fill="none"><rect width="24" height="16" rx="2" fill="#00c78b"/><rect x="0" y="0" width="15" height="14" rx="2" fill="#00c78b"/><rect x="0" y="0" width="13" height="14" rx="2" fill="#00c78b"/><rect x="0" y="0" width="15" height="14" rx="2" fill="#00c78b"/><rect x="0" y="0" width="14" height="14" rx="2" fill="#00c78b"/><rect x="0" y="0" width="15" height="19" rx="2" fill="#00c78b"/><text x="30" y="18" font-family="TT Sports Display" font-weight="700" font-size="20" fill="#00c78b">СПОРТС</text></svg>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="white" stroke-width="2" fill="none"/><line x1="16" y1="16" x2="21" y2="21" stroke="white" stroke-width="2"/></svg></button>
+      <button class="header-btn"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" fill="white"/></svg></button>
+      <button class="header-btn"><svg width="24" height="24" viewBox="0 0 24 24"><rect y="4" width="24" height="2" rx="1" fill="white"/><rect y="11" width="24" height="2" rx="1" fill="white"/><rect y="18" width="24" height="2" rx="1" fill="white"/></svg></button>
+    </div>
+  </header>
+
+  <!-- TOP ACTIONS -->
+  <div class="top-actions">
+    <button class="btn" style="background:#222;color:#fff;border-color:#222">Расписание</button>
+    <button class="btn">Для вас</button>
+    <button class="btn">Top</button>
+  </div>
+  <div class="top-scroll">
+    <div class="top-scroll-card"><div class="top-scroll-img"></div><div class="top-scroll-text">Соболенко о взрослении</div></div>
+    <div class="top-scroll-card"><div class="top-scroll-img"></div><div class="top-scroll-text">Жирков против БАТЭ</div></div>
+    <div class="top-scroll-card"><div class="top-scroll-img"></div><div class="top-scroll-text">Гала-матч в Череповце</div></div>
+  </div>
+
+  <!-- SUPERTOP -->
+  <section class="section">
+    <div class="supertop-img"></div>
+    <div class="supertop-title">«Я самокритичная, самоироничная». Поговорили с Ариной Соболенко о взрослении</div>
+    <div class="supertop-meta"><span>Анастасия Кузнецова</span><span>+230</span></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Зенит — Спартак: анонс центрального матча 2 тура РПЛ</div><div class="blog-meta">2 часа назад · +45</div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Жирков против БАТЭ: «Ехали на матч четыре дня» — интервью</div><div class="blog-meta">4 часа назад · +78</div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Как прошел гала-матч в Череповце со звездами НХЛ</div><div class="blog-meta"><span>🔥 12</span><span>5 часов назад</span></div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Вадим Евсеев вернулся. Зачем он «Текстильщику» и себе</div><div class="blog-meta">6 часов назад · +32</div></div></div>
+  </section>
+
+  <!-- PROGRAMMATIC -->
+  <div style="padding:0 16px;margin-bottom:32px"><div class="ad">Реклама</div></div>
+
+  <!-- NEWS -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Главные новости</span></div>
+    <div class="news-item"><div class="news-num">1</div><div class="news-content"><div class="news-title">Зенит — Спартак: анонс центрального матча 2 тура РПЛ <span class="fire">🔥 45</span></div><div class="news-meta"><span>2 часа назад</span></div></div></div>
+    <div class="news-item"><div class="news-num">2</div><div class="news-content"><div class="news-title">Жирков против БАТЭ: «Ехали на матч четыре дня» — интервью</div><div class="news-meta"><span>4 часа назад</span><span>+78</span></div></div></div>
+    <div class="news-item"><div class="news-num">3</div><div class="news-content"><div class="news-title">Как прошел гала-матч в Череповце со звездами НХЛ</div><div class="news-meta"><span>5 часов назад</span><span>+56</span></div></div></div>
+    <div class="news-item"><div class="news-num">4</div><div class="news-content"><div class="news-title">Вадим Евсеев вернулся. Зачем он «Текстильщику» и себе</div><div class="news-meta"><span>6 часов назад</span><span>+32</span></div></div></div>
+    <div class="news-item"><div class="news-num">5</div><div class="news-content"><div class="news-title">Мбаппе vs Винисиус: первый совместный матч в «Реале» — как это было</div><div class="news-meta"><span>7 часов назад</span></div></div></div>
+    <div class="news-item"><div class="news-num">6</div><div class="news-content"><div class="news-title">Леброн выбрал «Филадельфию». Что это значит для НБА</div><div class="news-meta"><span>8 часов назад</span><span>+210</span></div></div></div>
+    <div class="news-item"><div class="news-num">7</div><div class="news-content"><div class="news-title">Овечкин — в «Динамо»! Подробности контракта и реакция</div><div class="news-meta"><span>9 часов назад</span><span>🔥 94</span></div></div></div>
+    <div class="news-item"><div class="news-num">8</div><div class="news-content"><div class="news-title">Испания — чемпион мира. 50 выводов после финала</div><div class="news-meta"><span>10 часов назад</span><span>+510</span></div></div></div>
+    <button class="btn-all" style="margin-top:12px">Все новости</button>
+  </section>
+
+  <!-- LEAGUE RPL -->
+  <section class="section">
+    <div class="section-header"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Crect width='24' height='24' rx='4' fill='%23222'/%3E%3C/svg%3E"><span class="section-title">РПЛ — 2 тур</span></div>
+    <div class="match-row">
+      <div class="match-card">
+        <div class="match-info">Сегодня · 19:00</div>
+        <div class="match-teams">
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Зенит</div></div>
+          <div class="match-score">2:1</div>
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Спартак</div></div>
+        </div>
+        <div class="match-bet"><div class="match-odd">П1<div class="match-odd-val">2.35</div></div><div class="match-odd">X<div class="match-odd-val">3.20</div></div><div class="match-odd">П2<div class="match-odd-val">1.80</div></div></div>
+      </div>
+      <div class="match-card">
+        <div class="match-info">Сегодня · 21:30</div>
+        <div class="match-teams">
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">ЦСКА</div></div>
+          <div class="match-score">0:0</div>
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Динамо</div></div>
+        </div>
+        <div class="match-bet"><div class="match-odd">П1<div class="match-odd-val">2.10</div></div><div class="match-odd">X<div class="match-odd-val">3.50</div></div><div class="match-odd">П2<div class="match-odd-val">3.80</div></div></div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="betting">
+      <div class="betting-title">⚽ Вероятное число голов</div>
+      <div class="betting-match">
+        <div class="betting-match-info">АПЛ · Сегодня</div>
+        <div class="betting-match-teams">Ливерпуль — Арсенал</div>
+        <button class="betting-btn">Забьют больше 2,5<br><strong>3.25</strong></button>
+      </div>
+      <div class="betting-match">
+        <div class="betting-match-info">Ла Лига · Сегодня</div>
+        <div class="betting-match-teams">Реал — Барселона</div>
+        <button class="betting-btn">Забьют больше 2,5<br><strong>1.95</strong></button>
+      </div>
+    </div>
+    <div style="font-size:12px;color:#9b9b9b;text-align:center;margin:8px 0">Рассчитано на алгоритмах Спортса · Реклама 18+</div>
+    <button class="btn-all">Все игры</button>
+  </section>
+
+  <!-- PROGRAMMATIC -->
+  <div style="padding:0 16px;margin-bottom:32px"><div class="ad">Реклама</div></div>
+
+  <!-- TRIBUNA -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Трибуна</span></div>
+    <div class="supertop-img"></div>
+    <div class="supertop-title">Путь замкнулся: почему возвращение Латышонка — не шаг назад</div>
+    <div class="supertop-meta"><span>Денис Романцов</span><span>+180</span></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">50 выводов после чемпионата мира. От лучшего гола до главного разочарования</div><div class="blog-meta"><span>🔥 212</span><span>+93</span></div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Почему Месси потерялся в финале. Тактический разбор</div><div class="blog-meta"><span>🔥 340</span><span>+510</span></div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Пирло, Fonbet и ханжество. Где спорт, а где политика?</div><div class="blog-meta"><span>🔥 320</span><span>+180</span></div></div></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">153 кг томатов — чемпионам мира. Репортаж из испанской деревни</div><div class="blog-meta"><span>+92</span><span>🔥 46</span></div></div></div>
+    <button class="btn-all" style="margin-top:12px">Вся Трибуна</button>
+  </section>
+
+  <!-- LEAGUE GAMES -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Игровая</span></div>
+    <div class="match-row">
+      <div class="match-card">
+        <div class="match-info">Скоро · 22:00</div>
+        <div class="match-teams">
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Краснодар</div></div>
+          <div class="match-score">vs</div>
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Ростов</div></div>
+        </div>
+        <div class="match-bet"><div class="match-odd">П1<div class="match-odd-val">1.65</div></div><div class="match-odd">X<div class="match-odd-val">3.80</div></div><div class="match-odd">П2<div class="match-odd-val">5.50</div></div></div>
+      </div>
+      <div class="match-card">
+        <div class="match-info">Завтра · 19:00</div>
+        <div class="match-teams">
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Локомотив</div></div>
+          <div class="match-score">vs</div>
+          <div class="match-team"><div class="match-team-logo"></div><div class="match-team-name">Ахмат</div></div>
+        </div>
+        <div class="match-bet"><div class="match-odd">П1<div class="match-odd-val">1.90</div></div><div class="match-odd">X<div class="match-odd-val">3.40</div></div><div class="match-odd">П2<div class="match-odd-val">4.20</div></div></div>
+      </div>
+    </div>
+    <button class="btn-all" style="margin-top:12px">Все игры</button>
+  </section>
+
+  <!-- SPORT -->
+  <section class="section">
+    <div class="tabs" style="margin-bottom:12px">
+      <span class="tab active">Футбол</span>
+      <span class="tab">Хоккей</span>
+      <span class="tab">Баскетбол</span>
+      <span class="tab">Теннис</span>
+      <span class="tab">ММА</span>
+    </div>
+    <div class="news-item"><div class="news-content"><div class="news-title">Испания — чемпион мира. Конец эпохи Месси</div><div class="news-meta"><span>🔥 210</span><span>Вадим Лукомский</span></div></div></div>
+    <div class="news-item"><div class="news-content"><div class="news-title">Винисиус — в «Арсенал» за €180 млн. Сделка десятилетия</div><div class="news-meta"><span>🔥 156</span><span>Артём Соколов</span></div></div></div>
+    <div class="news-item"><div class="news-content"><div class="news-title">Мбаппе и Винисиус: первый совместный матч в «Реале»</div><div class="news-meta"><span>+45</span><span>Алексей Логвинов</span></div></div></div>
+    <button class="btn-all" style="margin-top:12px">Все новости футбола</button>
+  </section>
+
+  <!-- VIDEOSPORTS -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Видеоспортс</span></div>
+    <div class="match-row">
+      <div class="match-card">
+        <div class="supertop-img"></div>
+        <div class="supertop-title" style="font-size:14px">Зенит — Спартак: обзор матча 2 тура РПЛ</div>
+        <div class="supertop-meta">12 минут · 45K просмотров</div>
+      </div>
+      <div class="match-card">
+        <div class="supertop-img"></div>
+        <div class="supertop-title" style="font-size:14px">Овечкин: «Вернулся домой». Первое интервью в «Динамо»</div>
+        <div class="supertop-meta">8 минут · 32K просмотров</div>
+      </div>
+    </div>
+    <button class="btn-all" style="margin-top:12px">Все видео</button>
+  </section>
+
+  <!-- PROGRAMMATIC -->
+  <div style="padding:0 16px;margin-bottom:32px"><div class="ad">Реклама</div></div>
+
+  <!-- MATERIALS / EDITORIAL -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Редакция</span></div>
+    <div class="supertop-img"></div>
+    <div class="supertop-title">Я впервые побывал в Череповце — на гала-матче со звездами НХЛ. Это ничуть не хуже «Матча года»</div>
+    <div class="supertop-meta"><span>Денис Романцов</span><span>+340</span></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Как главные новички НБА провели Летнюю лигу</div><div class="blog-meta"><span>+120</span><span>🔥 56</span></div></div></div>
+    <button class="btn-all" style="margin-top:12px">Все материалы</button>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Рекомендации</span></div>
+    <div class="supertop-img"></div>
+    <div class="supertop-title">Как главные новички НБА провели Летнюю лигу</div>
+    <div class="supertop-meta"><span>Антон Швец</span><span>+120</span></div>
+    <hr class="divider">
+    <div class="blog"><div class="blog-img"></div><div class="blog-content"><div class="blog-title">Форма сборных ЧМ-2026: от худшей к лучшей</div><div class="blog-meta"><span>🔥 89</span></div></div></div>
+    <hr class="divider">
+    <div class="news-item"><div class="news-content"><div class="news-title">Златан в костюме и кроссовках: стиль звёзд ЧМ</div><div class="news-meta"><span>+67</span></div></div></div>
+    <div class="news-item"><div class="news-content"><div class="news-title">153 кг томатов — чемпионам мира</div><div class="news-meta"><span>+92</span></div></div></div>
+    <div class="news-item"><div class="news-content"><div class="news-title">«Я не играю ради рейтинга» — Медведев о теннисе и свободе</div><div class="news-meta"><span>🔥 67</span><span>+95</span></div></div></div>
+    <button class="btn-all" style="margin-top:12px">Все рекомендации</button>
+  </section>
+
+  <!-- SHORT POSTS -->
+  <section class="section">
+    <div class="section-header"><span class="section-title">Короткие посты</span></div>
+    <div class="short-post">
+      <div class="short-post-header"><div class="short-post-avatar"></div><div><div class="short-post-author">Вадим Лукомский</div><div class="short-post-time">2 часа назад</div></div></div>
+      <div class="short-post-text">Главный вывод после финала: Испания переизобрела футбол. Не ожидал, что Де ла Фуэнте сможет построить машину, которая перемолола всех. От Бразилии до Аргентины.</div>
+      <div class="short-post-stats"><span>🔥 210</span><span>+480</span><span>47 комментариев</span></div>
+    </div>
+    <div class="short-post">
+      <div class="short-post-header"><div class="short-post-avatar"></div><div><div class="short-post-author">Артём Соколов</div><div class="short-post-time">3 часа назад</div></div></div>
+      <div class="short-post-text">Винисиус в «Арсенал» за €180 млн. «Реал» молчит. Бразилец может покинуть Мадрид этим летом. Крупнейшая сделка в истории АПЛ.</div>
+      <div class="short-post-stats"><span>🔥 156</span><span>+340</span><span>23 комментария</span></div>
+    </div>
+    <div class="short-post">
+      <div class="short-post-header"><div class="short-post-avatar"></div><div><div class="short-post-author">Павел Лысенков</div><div class="short-post-time">5 часов назад</div></div></div>
+      <div class="short-post-text">Овечкин в «Динамо» — это не просто контракт. Это возвращение домой. 895 голов в НХЛ, рекорд Гретцки — и теперь Москва.</div>
+      <div class="short-post-img"></div>
+      <div class="short-post-stats"><span>🔥 94</span><span>+210</span><span>18 комментариев</span></div>
+    </div>
+    <button class="btn-all" style="margin-top:12px">Все посты</button>
+  </section>
+
+</div>
+
+</body>
+</html>
